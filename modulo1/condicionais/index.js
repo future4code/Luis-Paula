@@ -34,7 +34,7 @@ if (perguntaIdade >= 18) {
 }
 
 //2
-const turnoDoDia = prompt(
+let turnoDoDia = prompt(
   "Qual é o turno que você estuda? Digite M para matutino, V para vespertino ou N para noturno"
 ).toUpperCase();
 if (turnoDoDia === "M") {
@@ -48,7 +48,7 @@ if (turnoDoDia === "M") {
 }
 
 //3
-const turnoDoDia = prompt(
+turnoDoDia = prompt(
   "Qual é o turno que você estuda? Digite M para matutino, V para vespertino ou N para noturno"
 ).toUpperCase();
 switch (turnoDoDia) {
@@ -70,10 +70,10 @@ switch (turnoDoDia) {
 }
 
 //4
-const generoFilme = prompt(
+let generoFilme = prompt(
   "Qual o gênero do filme que vocês irão assistir?"
 ).toLowerCase();
-const valorDoFilme = Number(
+let valorDoFilme = Number(
   prompt("Qual o valor do ingresso em reais? Somente números por favor")
 );
 if (generoFilme === "fantasia" && valorDoFilme < 15) {
@@ -84,10 +84,10 @@ if (generoFilme === "fantasia" && valorDoFilme < 15) {
 
 // Desafios
 //1
-const generoFilme = prompt(
+generoFilme = prompt(
   "Qual o gênero do filme que vocês irão assistir?"
 ).toLowerCase();
-const valorDoFilme = Number(
+valorDoFilme = Number(
   prompt("Qual o valor do ingresso em reais? Somente números por favor")
 );
 const lanchinho = prompt(
