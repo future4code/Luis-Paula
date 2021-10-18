@@ -88,7 +88,18 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 }
 
 // EXERCÍCIO 10
-function retornaSegundoMaiorESegundoMenor(array) {}
+function retornaSegundoMaiorESegundoMenor(array) {
+  const organizarArray = (a, b) => {
+    const comparacao = a - b;
+    return comparacao;
+  };
+  const novaArray = array.sort(organizarArray);
+  const segundoMaiorEsegundoMenor = [
+    novaArray[novaArray.length - 2],
+    novaArray[1],
+  ];
+  return segundoMaiorEsegundoMenor;
+}
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {}
