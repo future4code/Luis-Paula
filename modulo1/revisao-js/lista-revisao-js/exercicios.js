@@ -77,7 +77,15 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 function retornaNPrimeirosPares(n) {}
 
 // EXERCÍCIO 09
-function classificaTriangulo(ladoA, ladoB, ladoC) {}
+function classificaTriangulo(ladoA, ladoB, ladoC) {
+  if (ladoA === ladoB && ladoA === ladoC) {
+    return 'Equilátero';
+  } else if (ladoA === ladoB || ladoA === ladoC || ladoB === ladoC) {
+    return 'Isósceles';
+  } else if (ladoA !== ladoB && ladoA !== ladoC && ladoB !== ladoC) {
+    return 'Escaleno';
+  }
+}
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {}
