@@ -47,7 +47,15 @@ function retornaNumerosParesElevadosADois(array) {
 }
 
 // EXERCÍCIO 06
-function retornaMaiorNumero(array) {}
+function retornaMaiorNumero(array) {
+  let maiorNumero = array[0];
+  for (i = 0; i < array.length; i++) {
+    if (array[i] > maiorNumero) {
+      maiorNumero = array[i];
+    }
+  }
+  return maiorNumero;
+}
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {}
