@@ -58,7 +58,20 @@ function retornaMaiorNumero(array) {
 }
 
 // EXERCÍCIO 07
-function retornaObjetoEntreDoisNumeros(num1, num2) {}
+function retornaObjetoEntreDoisNumeros(num1, num2) {
+  let maiorNumero = num1;
+  let menorNumero = num2;
+  if (num1 < num2) {
+    maiorNumero = num2;
+    menorNumero = num1;
+  }
+  const numeros = {
+    maiorNumero: maiorNumero,
+    maiorDivisivelPorMenor: maiorNumero % menorNumero === 0,
+    diferenca: maiorNumero - menorNumero,
+  };
+  return numeros;
+}
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {}
