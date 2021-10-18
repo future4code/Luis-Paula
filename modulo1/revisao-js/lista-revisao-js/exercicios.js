@@ -26,7 +26,13 @@ function retornaArrayOrdenado(array) {
 }
 
 // EXERCÍCIO 04
-function retornaNumerosPares(array) {}
+function retornaNumerosPares(array) {
+  const calcularPares = (a) => {
+    const calculo = a % 2 === 0;
+    return calculo;
+  };
+  return array.filter(calcularPares);
+}
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {}
