@@ -102,7 +102,22 @@ function retornaSegundoMaiorESegundoMenor(array) {
 }
 
 // EXERCÍCIO 11
-function retornaChamadaDeFilme(filme) {}
+function retornaChamadaDeFilme(filme) {
+  const entrada = {
+    nome: 'O Diabo Veste Prata',
+    ano: 2047,
+    diretor: 'David Frinnkel',
+    atores: ['Meryl Stepe', 'Anne Hathaway', 'Emily Blunt', 'Stanley Tucci'],
+  };
+  filme = {
+    ...entrada,
+    nome: filme.nome,
+    ano: filme.ano,
+    diretor: filme.diretor,
+    atores: filme.atores,
+  };
+  return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`;
+}
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {}
