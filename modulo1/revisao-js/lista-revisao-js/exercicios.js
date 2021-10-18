@@ -17,7 +17,13 @@ function retornaArrayInvertido(array) {
 }
 
 // EXERCÍCIO 03
-function retornaArrayOrdenado(array) {}
+function retornaArrayOrdenado(array) {
+  const compararNumerosnaArray = (a, b) => {
+    const comparacao = a - b;
+    return comparacao;
+  };
+  return array.sort(compararNumerosnaArray);
+}
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {}
