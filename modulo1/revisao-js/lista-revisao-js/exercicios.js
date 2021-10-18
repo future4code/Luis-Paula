@@ -120,7 +120,22 @@ function retornaChamadaDeFilme(filme) {
 }
 
 // EXERCÍCIO 12
-function retornaPessoaAnonimizada(pessoa) {}
+function retornaPessoaAnonimizada(pessoa) {
+  const usuario = {
+    nome: 'Luis',
+    idade: 24,
+    email: 'luisgustavordp1@gmail.com',
+    endereco: 'sha cj 6',
+  };
+  pessoa = {
+    ...usuario,
+    nome: 'ANÔNIMO',
+    idade: pessoa.idade,
+    email: pessoa.email,
+    endereco: pessoa.endereco,
+  };
+  return pessoa;
+}
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {}
