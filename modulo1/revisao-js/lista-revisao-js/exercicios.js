@@ -74,7 +74,15 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 }
 
 // EXERCÍCIO 08
-function retornaNPrimeirosPares(n) {}
+function retornaNPrimeirosPares(n) {
+  const arrayPares = [];
+  for (let i = 0; arrayPares.length < n; i++) {
+    if (i % 2 === 0) {
+      arrayPares.push(i);
+    }
+  }
+  return arrayPares;
+}
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
@@ -138,7 +146,30 @@ function retornaPessoaAnonimizada(pessoa) {
 }
 
 // EXERCÍCIO 13A
-function retornaPessoasAutorizadas(pessoas) {}
+function retornaPessoasAutorizadas(pessoas) {
+  //   const pessoasQueQueremEntrar = [
+  //     { nome: 'Paula', idade: 12, altura: 1.8 },
+  //     { nome: 'João', idade: 20, altura: 1.3 },
+  //     { nome: 'Pedro', idade: 15, altura: 1.9 },
+  //     { nome: 'Luciano', idade: 22, altura: 1.8 },
+  //     { nome: 'Artur', idade: 10, altura: 1.2 },
+  //     { nome: 'Soter', idade: 70, altura: 1.9 },
+  //   ];
+  //   pessoas = [
+  //     {
+  //       ...pessoasQueQueremEntrar,
+  //       nome: pessoas.nome,
+  //       idade: pessoas.idade,
+  //       altura: pessoas.altura,
+  //     },
+  //   ];
+  //   const idadeEAltura = () => {
+  //     if (pessoas.idade > 14 && pessoas.idade < 60 && pessoas.altura >= 1.5) {
+  //       return idadeEAltura;
+  //     }
+  //   };
+  //   return pessoas.map(idadeEAltura);
+}
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {}
