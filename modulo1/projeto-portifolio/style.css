@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+}
+
+/* pagina inicial */
+.pagina-inicial {
+  margin: 150px 150px 0px 150px;
+  padding: 250px;
+  background-color: #1e56a0;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  border-radius: 100px;
+}
+img {
+  width: 17vw;
+  height: 15vw;
+  border-radius: 130px;
+  border: 5px solid white;
+  text-align: center;
+  background-color: #1e56a0;
+  margin: -150px 500px 0px 600px;
+}
+div > p {
+  background-color: #d6e4f0;
+  margin: -120px 300px 0px 300px;
+  text-align: center;
+  font-size: larger;
+  padding: 150px;
+}
+
+th {
+  background-color: #163172;
+  margin: 0px 300px 0px 0px;
+  text-align: left;
+  font-size: xx-large;
+  padding: 0px;
+}
+
+td {
+  background-color: #d6e4f0;
+  margin: 50px 300px 0px 0px;
+  font-size: larger;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+button {
+  background-color: #163172;
+  height: 150px;
+  width: 150px;
+  margin: 0px 500px 50px 650px;
+  border-radius: 50px;
+  font-size: large;
+}
+
+button:hover {
+  background-color: #1e56a0;
+  height: 150px;
+  width: 150px;
+}
+
+button > a {
+  background-color: #163172;
+  color: #d6e4f0;
+  height: 150px;
+  width: 150px;
+}
+
+button a:hover {
+  background-color: #1e56a0;
+}
+
+#habilidades {
+  background-color: #163172;
+  display: block;
+  margin: 0px 150px -100px 150px;
+  text-align: center;
+  font-size: xx-large;
+  padding: 0px 0px 50px 0px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-weight: bolder;
+}
+
+.tabela {
+  background-color: #d6e4f0;
+  display: block;
+  margin: 50px 150px 0px 150px;
+  text-align: center;
+  font-size: larger;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-weight: bolder;
+}
+
+.texto-segunda-tabela1 {
+  background-color: #d6e4f0;
+  display: block;
+  text-align: center;
+  margin: 0px 150px -100px 150px;
+  padding: 100px 0px 100px 0px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+.texto-segunda-tabela2 {
+  background-color: #d6e4f0;
+  display: block;
+  text-align: center;
+  margin: 0px 150px -50px 150px;
+  padding: 100px 0px 100px 0px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+.texto-segunda-tabela3 {
+  background-color: #d6e4f0;
+  display: block;
+  text-align: center;
+  margin: -50px 150px 100px 150px;
+  padding: 100px 0px 100px 0px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+#comentario {
+  background-color: transparent;
+  text-align: left;
+  margin: 0px 0px -140px -150px;
+}
+
+.digite {
+  display: block;
+}
+#coment {
+  margin: 0px 0px 0px -150px;
+}
+
+.formulario {
+  margin: 0px 0px 0px 150px;
+}
+#enviar {
+  background-color: transparent;
+  text-align: center;
+  height: 30px;
+  width: 100px;
+  margin: 15px 0px 0px 0px;
+}
+
+#enviar:hover {
+  background-color: #163172;
+  color: #d6e4f0;
+}
+
+footer {
+  text-align: left;
+  font-size: larger;
+  padding: 50px 50px 50px 0px;
+}
+/* projeto1 */
+
+/* projeto2 */
