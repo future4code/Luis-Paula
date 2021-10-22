@@ -1,0 +1,91 @@
+body {
+  background-color: gray;
+}
+h1 {
+  color: darkturquoise;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#cor1 {
+  color: darkturquoise;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 25px;
+}
+
+#cor-Cabecalho {
+  color: darkturquoise;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 25px;
+}
+
+#redesSociais {
+  font-size: 25px;
+  color: darkturquoise;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#rodape {
+  font-size: 18px;
+  color: darkturquoise;
+}
+
+#cabecalhoestoque {
+  color: darkturquoise;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 25px;
+  color: darkturquoise;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#funcionarios {
+  font-size: 25px;
+  color: darkturquoise;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#produtos {
+  font-size: 25px;
+  color: darkturquoise;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#caixa img {
+  max-height: 400px;
+  max-width: 350px;
+  width: auto;
+  height: auto;
+  margin: 20px 50px 20px 100px;
+}
+
+.tabela {
+  background-color: darkviolet;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+.nomes {
+  background-color: darkviolet;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+.nomesFuncionarios {
+  color: darkgreen;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: oblique;
+}
