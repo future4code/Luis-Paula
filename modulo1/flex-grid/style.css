@@ -1,0 +1,152 @@
+* {
+  height: 240px;
+  width: 240px;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vh;
+}
+
+header {
+  display: flex;
+  height: 20px;
+  background-color: mediumvioletred;
+  padding: 10px 10px 30px 10px;
+  flex-wrap: nowrap;
+  width: 100vw;
+}
+
+#bolinho {
+  padding: 0px 15px 0px 0px;
+  height: 25px;
+  width: 20px;
+}
+
+button {
+  text-align: center;
+  margin-left: 70vw;
+  padding: 0px 15px 0px 15px;
+  border: 1px solid black;
+  height: 20px;
+  width: 70px;
+}
+button:hover {
+  background-color: #f2d0e0;
+  border: 1px solid black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 45vh;
+  background-color: #f2d0e0;
+}
+
+nav {
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.fotosiniciais {
+  height: 20px;
+  width: 20px;
+  padding-right: 10px;
+  padding-left: 25px;
+}
+
+.fotossetas {
+  height: 20px;
+  width: 20px;
+  padding-left: 154px;
+}
+
+#bolos1 {
+  display: grid;
+  justify-content: center;
+  box-shadow: darkgray;
+  text-shadow: darkgray;
+  margin-left: 340px;
+  margin-top: -160px;
+  margin-bottom: -20px;
+}
+
+#bolos2 {
+  display: grid;
+  justify-content: center;
+  box-shadow: darkgray;
+  text-shadow: darkgray;
+  margin-left: 600px;
+  margin-top: -20px;
+}
+
+#bolos3 {
+  display: grid;
+  justify-content: center;
+  box-shadow: darkgray;
+  text-shadow: darkgray;
+  margin-left: 860px;
+  margin-top: -40px;
+}
+
+#bolos4 {
+  display: grid;
+  justify-content: center;
+  box-shadow: darkgray;
+  text-shadow: darkgray;
+  margin-left: 1120px;
+  margin-top: -40px;
+}
+
+#bolos5 {
+  display: grid;
+  justify-content: center;
+  box-shadow: darkgray;
+  text-shadow: darkgray;
+  margin-left: 340px;
+  margin-top: 300px;
+}
+
+#bolos6 {
+  display: grid;
+  justify-content: center;
+  box-shadow: darkgray;
+  text-shadow: darkgray;
+  margin-left: 600px;
+  margin-top: -40px;
+}
+
+#bolos7 {
+  display: grid;
+  justify-content: center;
+  box-shadow: darkgray;
+  text-shadow: darkgray;
+  margin-left: 860px;
+  margin-top: -40px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.texto-bolo {
+  margin-top: -220px;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: mediumvioletred;
+  padding: 10px;
+  height: 20px;
+  width: 100vw;
+  bottom: 0;
+}
