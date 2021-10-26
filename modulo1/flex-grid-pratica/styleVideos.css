@@ -1,22 +1,35 @@
+* {
+  margin: 0;
+  border: 0;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  background-color: #9d65c9;
+}
+
 .cabeca {
   display: flex;
-  border: 3px solid black;
   align-items: center;
 }
 header {
   display: flex;
-  padding: 60px;
   justify-content: space-between;
+  grid-column: 1/-1;
+  background-color: #2a3d66;
+  padding: 50px 20px;
+  border-top: 0px;
 }
 
 .busca {
   display: flex;
-  border: 3px solid violet;
+  align-items: center;
 }
 .video {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  border: 3px solid darkorange;
   height: 500px;
   width: 700px;
   align-items: center;
@@ -25,16 +38,19 @@ header {
 
 .pe {
   display: flex;
-  border: 3px solid darkorchid;
+  align-items: center;
 }
 
 footer {
   display: flex;
   justify-content: space-between;
-  padding: 60px;
+  background-color: #d789d7;
+  grid-column: 1/-1;
+  padding: 50px 20px;
+  align-items: center;
 }
 
 .inicio {
   display: flex;
-  border: 3px solid darkslategray;
+  align-items: center;
 }
