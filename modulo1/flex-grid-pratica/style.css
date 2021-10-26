@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* nav {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+} */
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+  background-color: #2a3d66;
+}
+
+.botao-de-busca {
+  display: flex;
+  align-items: center;
+}
+main {
+  display: grid;
+  border: 3px solid blue;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  background-color: #9d65c9;
+}
+
+video {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.container {
+  display: flex;
+  height: 300px;
+  width: 300px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 5px 3px 5px black;
+  background-color: #d789d7;
+}
+.container > h2 {
+  text-align: center;
+}
+.rodape {
+  display: flex;
+  padding: 60px;
+  border: 3px solid red;
+}

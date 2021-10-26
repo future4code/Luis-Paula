@@ -1,0 +1,40 @@
+.cabeca {
+  display: flex;
+  border: 3px solid black;
+  align-items: center;
+}
+header {
+  display: flex;
+  padding: 60px;
+  justify-content: space-between;
+}
+
+.busca {
+  display: flex;
+  border: 3px solid violet;
+}
+.video {
+  display: flex;
+  justify-content: center;
+  border: 3px solid darkorange;
+  height: 500px;
+  width: 700px;
+  align-items: center;
+  margin: 0 400px;
+}
+
+.pe {
+  display: flex;
+  border: 3px solid darkorchid;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+}
+
+.inicio {
+  display: flex;
+  border: 3px solid darkslategray;
+}
