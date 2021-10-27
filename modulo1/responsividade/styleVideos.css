@@ -71,3 +71,20 @@ footer {
   background-color: #5d54a4;
   color: white;
 }
+
+@media screen and (min-device-width: 320px) and (max-device-width: 670px) {
+  /* celulares */
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 50px 50px 50px 50px;
+    place-items: center;
+  }
+
+  video {
+    min-width: 300px;
+    max-width: 350px;
+    padding: 50px;
+  }
+}
