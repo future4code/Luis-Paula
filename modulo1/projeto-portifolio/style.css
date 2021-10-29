@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+}
+
+/* pagina inicial */
+header {
+  background-color: #d6e4f0;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: large;
+  padding: 0px 150px 5px 150px;
+  margin: 0px 0px -100px 340px;
+  position: fixed;
+  top: 0;
+}
+
+header > a {
+  background-color: #d6e4f0;
+  padding: 10px 15px 5px 15px;
+}
+
+header > a:hover {
+  background-color: #1e56a0;
+  color: #f6f6f6;
+}
+
+.pagina-inicial {
+  margin: 50px 150px 0px 150px;
+  padding: 250px;
+  background-color: #1e56a0;
+  color: #f6f6f6;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border-radius: 100px;
+}
+img {
+  width: 17vw;
+  height: 15vw;
+  border-radius: 130px;
+  border: 5px solid white;
+  text-align: center;
+  background-color: transparent;
+  margin: -150px 500px 0px 600px;
+}
+
+h2 {
+  text-align: center;
+}
+
+div > p {
+  background-color: #d6e4f0;
+  margin: -115px 300px 0px 300px;
+  text-align: center;
+  font-size: larger;
+  padding: 150px 100px 100px 100px;
+}
+
+th {
+  background-color: #1e56a0;
+  margin: 0px 300px 0px 0px;
+  text-align: center;
+  font-size: xx-large;
+  padding: 0px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #f6f6f6;
+}
+
+td {
+  background-color: #d6e4f0;
+  margin: 50px 300px 0px 0px;
+  font-size: larger;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+button {
+  background-color: #163172;
+  height: 150px;
+  width: 150px;
+  margin: 50px 500px 50px 650px;
+  border-radius: 50px;
+  font-size: large;
+  border: 1px #163172 solid;
+}
+
+button:hover {
+  background-color: #1e56a0;
+  height: 150px;
+  width: 150px;
+}
+
+button > a {
+  background-color: #163172;
+  color: #d6e4f0;
+  height: 150px;
+  width: 150px;
+}
+
+button a:hover {
+  background-color: #1e56a0;
+}
+
+#habilidades {
+  background-color: #1e56a0;
+  display: block;
+  margin: 0px 150px -100px 150px;
+  text-align: center;
+  font-size: xx-large;
+  padding: 0px 0px 50px 0px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bolder;
+  color: #f6f6f6;
+}
+
+.tabela {
+  background-color: #d6e4f0;
+  display: block;
+  margin: 70px 150px -50px 150px;
+  padding: 0px 0px -50px 0px;
+  text-align: center;
+  font-size: x-large;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bolder;
+}
+
+.texto-segunda-tabela1 {
+  background-color: #d6e4f0;
+  display: block;
+  text-align: center;
+  margin: 0px 150px -100px 150px;
+  padding: 50px 150px 100px 150px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+.texto-segunda-tabela2 {
+  background-color: #d6e4f0;
+  display: block;
+  text-align: center;
+  margin: 0px 150px -100px 150px;
+  padding: 50px 150px 100px 150px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+.texto-segunda-tabela3 {
+  background-color: #d6e4f0;
+  display: block;
+  text-align: center;
+  margin: -50px 150px 0px 150px;
+  padding: 50px 150px 100px 150px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+#comentario {
+  background-color: transparent;
+  text-align: left;
+  margin: 0px 0px -100px -100px;
+}
+
+.digite {
+  display: block;
+}
+#comment {
+  margin: 0px 0px 0px -150px;
+}
+
+.comentario {
+  margin: 0px 0px 0px -150px;
+  display: block;
+}
+
+.formulario {
+  margin: 0px 0px 0px 150px;
+}
+#enviar {
+  background-color: transparent;
+  text-align: center;
+  height: 30px;
+  width: 100px;
+  margin: 15px 0px 0px 0px;
+  border-radius: 100px;
+  border: 1px solid black;
+}
+
+#enviar:hover {
+  background-color: #163172;
+  color: #d6e4f0;
+}
+
+footer {
+  text-align: left;
+  font-size: larger;
+  padding: 50px 50px 50px 0px;
+}
