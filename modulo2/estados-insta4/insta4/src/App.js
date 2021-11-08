@@ -46,9 +46,8 @@ class App extends React.Component {
       fotoPost: this.state.valorInputFotoPost,
     };
 
-    const novoPost = { ...this.state.listaPessoas, post };
+    const novoPost = [...this.state.listaPessoas, post];
     this.setState({ listaPessoas: novoPost });
-    this.setState({ listaPessoas: '' });
   };
 
   onChangeInputNome = (event) => {
@@ -62,6 +61,15 @@ class App extends React.Component {
   };
 
   render() {
+    const retornoNovoPost = this.state.listaPessoas.map((pessoas) => {
+      return (
+        <Post
+          nomeUsuario={pessoas.nomeUsuario}
+          fotoUsuario={pessoas.fotoUsuario}
+          fotoPost={pessoas.fotoPost}
+        />
+      );
+    });
     return (
       <MainContainer>
         <AdicionarNovoPost>
@@ -84,15 +92,7 @@ class App extends React.Component {
           />
           <button onClick={this.adicionaPost}>Adicionar Novo Post</button>
         </AdicionarNovoPost>
-        {this.state.listaPessoas.map((pessoas) => {
-          return (
-            <Post
-              nomeUsuario={pessoas.nomeUsuario}
-              fotoUsuario={pessoas.fotoUsuario}
-              fotoPost={pessoas.fotoPost}
-            />
-          );
-        })}
+        {retornoNovoPost}
       </MainContainer>
     );
   }
