@@ -1,27 +1,64 @@
 import axios from 'axios';
 import React from 'react';
+import styled from 'styled-components';
+import AdicionarPlaylist from './adicionarMusicas';
 
+const MainContainer = styled.div`
+  border: 1px solid #00d95a;
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #191414;
+`;
+
+const ContainerHeader = styled.div`
+  border: 1px solid #00d95a;
+  background-color: #191414;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    color: #00d95a;
+    text-align: left;
+    font-size: xx-large;
+    display: flex;
+  }
+`;
+
+const ContainerPlaylists = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ContainerMusicas = styled.div`
+  border: 1px solid #00d95a;
+  color: white;
+  padding: 150px;
+  font-size: xx-large;
+`;
+
+const Texto = styled.div`
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-right: 150px;
+  padding-top: 150px;
+  font-size: xx-large;
+`;
 export default class ListaPlaylists extends React.Component {
   state = {
     lista: [],
     nomePlaylist: '',
-    aberto: false,
     musicas: [],
   };
   componentDidMount() {
     this.listaDePlaylists();
+    // this.musicasPlaylist();
   }
 
   onChangeNomePlaylist = (e) => {
     this.setState({ nomePlaylist: e.target.value });
-  };
-
-  handleBotaoAbrir = () => {
-    this.setState((abrir) => {
-      return {
-        aberto: !abrir.aberto,
-      };
-    });
   };
 
   listaDePlaylists = () => {
@@ -66,6 +103,8 @@ export default class ListaPlaylists extends React.Component {
       });
   };
 
+  getIdPlaylists = console.log(this.state.musicas.id);
+
   deletarPlaylist = (playlistId) => {
     const url = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlistId}`;
     axios
@@ -82,62 +121,83 @@ export default class ListaPlaylists extends React.Component {
         alert('Ops! Detectamos um erro, tente novamente!');
       });
   };
-
-  musicasPlaylist = (playlistId) => {
-    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlistId}/tracks`;
-    axios
-      .get(url, {
-        headers: {
-          Authorization: 'luis-paula-carver',
-        },
-      })
-      .then((res) => {
-        this.listaDePlaylists();
-        this.setState({ musicas: res.data });
-      })
-      .catch((err) => {
-        alert('Ops! Detectamos um erro, tente novamente!');
-      });
-  };
+  // musicasPlaylist = () => {
+  //   const url = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks`;
+  //   axios
+  //     .get(url, {
+  //       headers: {
+  //         Authorization: 'luis-paula-carver',
+  //       },
+  //     })
+  //     .then((res) => {
+  //       this.listaDePlaylists();
+  //       console.log('playlist', res);
+  //       this.setState({ musicas: res.data });
+  //     })
+  //     .catch((err) => {
+  //       alert('Ops! Detectamos um erro, tente novamente!');
+  //     });
+  // };
 
   render() {
+    // const mostrarMusicas = this.state.musicas.map((item) => {
+    //   return (
+    //     <div key={item.id}>
+    //       <p>{item.name}</p>
+    //       <p>{item.artist}</p>
+    //       <p>{item.url}</p>
+    //     </div>
+    //   );
+    // });
+
+    const mostrarPlaylists = this.state.lista.map((generos) => {
+      return (
+        <p>
+          <button
+            key={generos.id}
+            onClick={() => {
+              return console.log(this.state.musicas.id);
+            }}
+          >
+            {generos.name}
+            <button
+              onClick={() => {
+                this.deletarPlaylist(generos.id);
+              }}
+            >
+              X
+            </button>
+          </button>
+        </p>
+      );
+    });
+    <AdicionarPlaylist PropsParaLista={this.listaDePlaylists} />;
     return (
       <div>
-        <button onClick={this.props.Cadastro}>
-          Adicionar musicas à playlist
-        </button>
-        <input
-          type="text"
-          onChange={this.onChangeNomePlaylist}
-          placeholder="Nome da nova playlist"
-        />
-        <button onClick={this.novaPlaylist}>Nova Playlist</button>
-        <div>
-          <button onClick={this.handleBotaoAbrir}>Abra as Playlists</button>
-          {this.state.lista.map((generos) => {
-            return (
-              <div key={generos.id}>
-                {generos.name}
-                {this.state.aberto && (
-                  <div class="dropdown">
-                    <ul>
-                      {this.state.musicas.map((musica) => {
-                        return <li key={musica.id}>{musica.name}</li>;
-                      })}
-                    </ul>
-                  </div>
-                )}
-                <button
-                  onClick={() => {
-                    this.deletarPlaylist(generos.id);
-                  }}
-                >
-                  X
-                </button>
-              </div>
-            );
-          })}
-        </div>
+        <ContainerHeader>
+          <p>SpotiFalso</p>
+          <button onClick={this.props.Cadastro}>
+            Adicionar musicas à playlist
+          </button>
+          <input
+            type="text"
+            value={this.state.nomePlaylist}
+            onChange={this.onChangeNomePlaylist}
+            placeholder="Nome da nova playlist"
+          />
+          <button onClick={this.novaPlaylist}>Nova Playlist</button>
+        </ContainerHeader>
+
+        <MainContainer>
+          <ContainerPlaylists>
+            <div>{mostrarPlaylists}</div>
+          </ContainerPlaylists>
+          <ContainerMusicas>Finja que existem músicas aqui!</ContainerMusicas>
+          <Texto>
+            <p>Spotifalso!</p>
+            <p>Tão falso que nada funciona</p>
+          </Texto>
+        </MainContainer>
       </div>
     );
   }

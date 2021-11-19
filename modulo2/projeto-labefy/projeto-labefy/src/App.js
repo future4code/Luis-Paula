@@ -4,7 +4,7 @@ import ListaPlaylists from './Componentes/listaPlaylists';
 
 export default class App extends React.Component {
   state = {
-    tela: 'adicionar',
+    tela: 'listas',
   };
 
   escolherTela = () => {
