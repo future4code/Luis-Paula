@@ -24,16 +24,22 @@ function Home(props) {
 
   const [parametro, setParametro] = useState([]);
   const [idUsuario, setIdUsuario] = useState('');
+  const [like, setLike] = useState(false);
 
   useEffect(() => {
     chooseProfile();
-  }, [setParametro]);
+  }, [like]);
   useEffect(() => {
     choosePerson();
   }, [idUsuario]);
   useEffect(() => {
     clearEverything();
   }, []);
+
+  const onClickLike = (like) => {
+    setLike(like);
+    choosePerson();
+  };
 
   const chooseProfile = () => {
     axios
@@ -48,13 +54,18 @@ function Home(props) {
       });
   };
   const choosePerson = () => {
-    const body = { id: idUsuario, choice: true };
+    const body = { id: idUsuario, choice: like };
     axios
       .post(`${baseUrl}/${aluno}/choose-person`, body, {
         headers: { Authorization: `${autorizacao}` },
       })
       .then((res) => {
         console.log(res.data);
+        if (res.data.isMatch) {
+          console.log('Match');
+        } else {
+          console.log('Não Match');
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -75,13 +86,27 @@ function Home(props) {
       <h1>Eu sou o Home</h1>
       <Card>
         <h3>AstroMatch</h3>
+        <button onClick={props.irParaMatch}>Match</button>
         <img src={parametro.photo} alt="foto" />
         <p>
           {parametro.name}, {parametro.age}
         </p>
         <p>{parametro.bio}</p>
+        <button
+          onClick={() => {
+            onClickLike(true);
+          }}
+        >
+          Like
+        </button>
+        <button
+          onClick={() => {
+            onClickLike(false);
+          }}
+        >
+          Dislike
+        </button>
       </Card>
-      <button onClick={props.irParaMatch}>Match</button>
     </div>
   );
 }
