@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import HomeIcon from '@material-ui/icons/Home';
 
 const ContainerPrincipal = styled.div`
   box-shadow: 1px 3px 5px black;
@@ -11,7 +12,7 @@ const ContainerPrincipal = styled.div`
   }
 `;
 
-const ContainerMatch = styled.p`
+const ContainerMatch = styled.div`
   display: flex;
   align-items: center;
 
@@ -31,13 +32,17 @@ const ContainerMatch = styled.p`
 function Match(props) {
   const baseUrl =
     'https://us-central1-missao-newton.cloudfunctions.net/astroMatch';
-  const aluno = 'Luis';
+  const aluno = 'luis';
 
   const [pessoas, setPessoas] = useState([]);
 
   useEffect(() => {
     getMatches();
   }, [setPessoas]);
+
+  const onClickClear = () => {
+    clearEverything(getMatches());
+  };
 
   const getMatches = () => {
     axios
@@ -53,13 +58,26 @@ function Match(props) {
       });
   };
 
+  const clearEverything = () => {
+    axios
+      .put(`${baseUrl}/${aluno}/clear`)
+      .then((res) => {
+        alert('Contatos apagados com sucesso');
+      })
+      .catch((err) => {
+        alert('Erro! Tente novamente.');
+      });
+  };
+
   return (
     <div>
-      <h1>Eu sou o Match</h1>
-
       <ContainerPrincipal>
-        <h3>Astro-Match</h3>
-        <button onClick={props.irParaHome}>Home</button>
+        <h3>AstroMatch</h3>
+        <HomeIcon
+          onClick={props.irParaHome}
+          fontSize="large"
+          color="secondary"
+        />
         {pessoas.map((pessoa) => {
           return (
             <div>
@@ -71,6 +89,7 @@ function Match(props) {
           );
         })}
       </ContainerPrincipal>
+      <button onClick={onClickClear}>Limpar Matches</button>
     </div>
   );
 }

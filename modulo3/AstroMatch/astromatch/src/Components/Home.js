@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import ChatIcon from '@material-ui/icons/Chat';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import CloseIcon from '@material-ui/icons/Close';
 
 const Card = styled.div`
   display: flex;
@@ -16,10 +19,25 @@ const Card = styled.div`
   }
 `;
 
+const Icons = styled.div`
+  display: flex;
+`;
+const Icone1 = styled.div`
+  :hover {
+    background-color: pink;
+  }
+`;
+
+const Icone2 = styled.div`
+  :hover {
+    background-color: pink;
+  }
+`;
+
 function Home(props) {
   const baseUrl =
     'https://us-central1-missao-newton.cloudfunctions.net/astroMatch';
-  const aluno = 'Luis';
+  const aluno = 'luis';
   const autorizacao = 'luis-paula-carver';
 
   const [parametro, setParametro] = useState([]);
@@ -29,28 +47,25 @@ function Home(props) {
   useEffect(() => {
     chooseProfile();
   }, [like]);
-  useEffect(() => {
-    choosePerson();
-  }, [idUsuario]);
-  useEffect(() => {
-    clearEverything();
-  }, []);
+  // useEffect(() => {
+  //   choosePerson();
+  // }, [setIdUsuario]);
 
   const onClickLike = (like) => {
     setLike(like);
-    choosePerson();
+    choosePerson(chooseProfile());
   };
 
   const chooseProfile = () => {
     axios
       .get(`${baseUrl}/${aluno}/person`)
       .then((res) => {
-        console.log(res.data.profile);
+        console.log(res);
         setParametro(res.data.profile);
         setIdUsuario(res.data.profile.id);
       })
       .catch((err) => {
-        console.log(err);
+        alert('Erro! Tente novamente.');
       });
   };
   const choosePerson = () => {
@@ -62,50 +77,45 @@ function Home(props) {
       .then((res) => {
         console.log(res.data);
         if (res.data.isMatch) {
-          console.log('Match');
+          alert('Você tem um novo match!');
         } else {
-          console.log('Não Match');
         }
       })
       .catch((err) => {
-        console.log(err);
+        alert('Erro! Tente novamente.');
       });
   };
-  const clearEverything = () => {
-    axios
-      .put(`${baseUrl}/${aluno}/clear`)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+
   return (
     <div>
-      <h1>Eu sou o Home</h1>
       <Card>
         <h3>AstroMatch</h3>
-        <button onClick={props.irParaMatch}>Match</button>
+        <ChatIcon color="secondary" onClick={props.irParaMatch} />
         <img src={parametro.photo} alt="foto" />
         <p>
           {parametro.name}, {parametro.age}
         </p>
         <p>{parametro.bio}</p>
-        <button
-          onClick={() => {
-            onClickLike(true);
-          }}
-        >
-          Like
-        </button>
-        <button
-          onClick={() => {
-            onClickLike(false);
-          }}
-        >
-          Dislike
-        </button>
+        <Icons>
+          <Icone1>
+            <CloseIcon
+              fontSize="large"
+              color="secondary"
+              onClick={() => {
+                onClickLike(false);
+              }}
+            />
+          </Icone1>
+          <Icone2>
+            <FavoriteIcon
+              fontSize="large"
+              color="secondary"
+              onClick={() => {
+                onClickLike(true);
+              }}
+            />
+          </Icone2>
+        </Icons>
       </Card>
     </div>
   );
