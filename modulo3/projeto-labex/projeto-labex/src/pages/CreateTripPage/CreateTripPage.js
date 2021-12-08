@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router';
 
@@ -10,6 +10,14 @@ function Create() {
   const GoToHome = () => {
     history.push('/');
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token === null) {
+      console.log('não está logado');
+      history.push('/login');
+    }
+  }, []);
   return (
     <div>
       <p>Criar Viagens</p>
