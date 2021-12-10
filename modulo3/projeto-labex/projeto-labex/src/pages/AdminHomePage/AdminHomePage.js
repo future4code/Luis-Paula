@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router';
 import axios from 'axios';
+import { Buttons, Container, MainContainer } from './StyledAdminHome';
 
 function AdminHomePage() {
   const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX';
   const name = 'luis';
+
+  const [idTrips, setIdTrips] = useState([]);
+  const id = idTrips.id;
+
   const history = useHistory();
   const GoToCreate = () => {
     history.push('/admin/trips/create');
@@ -17,7 +22,7 @@ function AdminHomePage() {
     history.push('/login');
   };
   const GoToDetalhes = () => {
-    history.push('/admin/trips/:id');
+    history.push(`/admin/trips/:id`);
   };
 
   useEffect(() => {
@@ -31,7 +36,7 @@ function AdminHomePage() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     axios
-      .get(`${baseUrl}/${name}/trip/${'LyvCb5jxopjfn6HBuh5L'}`, {
+      .get(`${baseUrl}/${name}/trip/:id`, {
         headers: {
           auth: token,
         },
@@ -43,22 +48,45 @@ function AdminHomePage() {
         console.log(err.response);
       });
   }, []);
+
+  useEffect(() => {
+    getTrips();
+  }, []);
+
+  const getTrips = () => {
+    axios
+      .get(`${baseUrl}/${name}/trips`)
+      .then((res) => {
+        console.log(res.data);
+        setIdTrips(res.data.trips);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <div>
-      <p>Página Inicial Admin</p>
-      <Button variant="contained" onClick={GoToHome}>
-        Home
-      </Button>
-      <Button variant="contained" onClick={GoToCreate}>
-        Viagens
-      </Button>
-      <Button variant="contained" onClick={GoToLogin}>
-        Login
-      </Button>
-      <Button variant="contained" onClick={GoToDetalhes}>
-        Detalhes
-      </Button>
-    </div>
+    <MainContainer>
+      <Buttons>
+        <Button variant="contained" onClick={GoToHome}>
+          Página Inicial
+        </Button>
+        <Button variant="contained" onClick={GoToCreate}>
+          Nova Viagem
+        </Button>
+      </Buttons>
+      <Container>
+        {idTrips.map((id) => {
+          return (
+            <Button variant="contained">
+              <p onClick={GoToDetalhes} key={id.id}>
+                {id.name}
+              </p>
+            </Button>
+          );
+        })}
+      </Container>
+    </MainContainer>
   );
 }
 

@@ -1,3 +1,29 @@
+# O que é o projeto LabeX?
+
+O projeto LabeX é uma plataforma de viagens extraterrestres, ou seja, te leva para outros planetas dentro do nosso sistema solar.
+
+# Andamento atual do projeto:
+
+Estou entregando o projeto ainda bem incompleto, estou tendo algumas dificuldades com os conteúdos passados nessa semana por isso o projeto está incompleto. Tenho planos de, num futuro próximo conseguir completar o projeto assim que entender todos os conteúdos passados nessa semana.
+
+# Funcionalidades do projeto:
+
+O projeto muda de páginas, aceita login e o guarda no localStorage. Porém não é possível fazer mais nada no projeto. Como disse anteriormente ele está, ainda, bastante incompleto.
+
+# Tecnologias utilizadas no projeto:
+
+Principal biblioteca de criação foi o React, com styled components, axios e hooks.
+
+# Considerações finais:
+
+O projeto ainda está em processo de aperfeiçoamento, busco trabalhar nele assim que possível. Entendo que esta semana não foi a melhor pro meu aprendizado e tenho que focar em melhorar isso respeitando meus limites.
+O projeto ainda está com muitos consoles.logs nele, justamente porque ainda está em fase de teste, mas tentei melhorar a padronização na nomeação de variáveis deixando tudo em uma lingua só e estou tentando manter uma melhor organização durante o processo de criação dos projetos.
+
+# Login:
+
+email: luiscarver@gmail.com.br
+senha: 123456
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

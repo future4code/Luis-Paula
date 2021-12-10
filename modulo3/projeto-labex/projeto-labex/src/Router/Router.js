@@ -8,11 +8,12 @@ import Create from '../pages/CreateTripPage/CreateTripPage';
 import List from '../pages/ListTripsPage/ListTripsPage';
 import Login from '../pages/LoginPage/LoginPage';
 import Details from '../pages/TripDetails/TripDetailsPage';
+import { Footer, MainContainer } from './StyledRoute';
 
 export function Router() {
   return (
     <BrowserRouter>
-      <h1>HEADER</h1>
+      <MainContainer>LabeX</MainContainer>
       <Switch>
         <Route exact path={'/'}>
           <HomePage />
@@ -42,6 +43,7 @@ export function Router() {
           <Details />
         </Route>
       </Switch>
+      <Footer>Viaje como no futuro, hoje!</Footer>
     </BrowserRouter>
   );
 }

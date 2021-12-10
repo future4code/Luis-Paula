@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import axios from 'axios';
 
 function Details() {
   const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX';
   const name = 'luis';
-  const [idTrips, setIdTrips] = useState([]);
+  const history = useHistory();
+  const params = useParams();
   const [trips, setTrips] = useState([]);
 
-  const history = useHistory();
-  const GoToAdmin = () => {
+  const goBack = () => {
     history.push('/admin/trips/list');
-  };
-  const GoToHome = () => {
-    history.push('/');
   };
 
   useEffect(() => {
@@ -34,61 +31,22 @@ function Details() {
       .get(`${baseUrl}/${name}/trips`)
       .then((res) => {
         console.log(res.data);
-        setIdTrips(res.data.trips);
+        setTrips(res.data.trips);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  useEffect(() => {
-    getData();
-  }, [idTrips]);
-
-  const onChangeClick = () => {
-    history.push(`/admin/trips/list/${trips}`);
-  };
-
-  const getData = () => {
-    const loneId = idTrips.map((id) => {
-      return id.id;
-    });
-    const token = localStorage.getItem('token');
-    axios
-      .get(`${baseUrl}/${name}/trip/${loneId}`, {
-        headers: {
-          auth: token,
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
-        setTrips(res.data.id);
-      })
-      .catch((err) => {
-        console.log(err.response);
-      });
-  };
+  const names = trips.map((trip) => {
+    return trip.name;
+  });
+  console.log('params', params);
   return (
     <div>
       <p>Detalhes da Viagem</p>
-      {idTrips.map((id) => {
-        return (
-          <p>
-            <Button
-              onClick={() => {
-                onChangeClick();
-              }}
-            >
-              {id.name}
-            </Button>
-          </p>
-        );
-      })}
-      <Button variant="contained" onClick={GoToHome}>
-        Home
-      </Button>
-      <Button variant="contained" onClick={GoToAdmin}>
-        Admin
+      <p>{names}</p>
+      <Button variant="contained" onClick={goBack}>
+        Voltar
       </Button>
     </div>
   );

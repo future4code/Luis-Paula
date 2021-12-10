@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router';
 import axios from 'axios';
-import { Container } from './StyledList';
+import { Buttons, Container, ContainerList, MainContainer } from './StyledList';
 
 const name = 'luis';
 const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX';
@@ -35,28 +35,31 @@ function List() {
   };
 
   return (
-    <div>
-      <p>Lista de Viagens</p>
-      <div>
+    <MainContainer>
+      <Buttons>
+        <Button variant="contained" onClick={GoToHome}>
+          Página Inicial
+        </Button>
+        <Button variant="contained" onClick={GoToForm}>
+          Inscreva-se
+        </Button>
+      </Buttons>
+      <Container>
         {component.map((comp) => {
           return (
             <Container key={comp.id}>
-              <p>{comp.name}</p>
-              <p>{comp.date}</p>
-              <p>{comp.description}</p>
-              <p>{comp.durationInDays}</p>
-              <p>{comp.planet}</p>
+              <ContainerList>
+                <p>{comp.name}</p>
+                <p>{comp.date}</p>
+                <p>{comp.description}</p>
+                <p>{comp.durationInDays}</p>
+                <p>{comp.planet}</p>
+              </ContainerList>
             </Container>
           );
         })}
-      </div>
-      <Button variant="contained" onClick={GoToHome}>
-        Home
-      </Button>
-      <Button variant="contained" onClick={GoToForm}>
-        Inscreva-se
-      </Button>
-    </div>
+      </Container>
+    </MainContainer>
   );
 }
 

@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import { useHistory } from 'react-router';
 import { Input } from '@mui/material';
 import axios from 'axios';
+import { Buttons, Container, MainContainer } from './StyledLogin';
 
 function Login() {
   const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX';
@@ -35,41 +36,46 @@ function Login() {
     axios
       .post(`${baseUrl}/${name}/login`, body)
       .then((res) => {
-        console.log('certo', res.data);
         localStorage.setItem('token', res.data.token);
         history.push('/admin/trips/list');
       })
       .catch((err) => {
-        console.log('errado', err.response);
+        alert('Ops Ocorreu um erro :( tente novamente!');
       });
   };
   return (
-    <div>
-      <h2>Login</h2>
-      <p>
-        <Input
-          placeholder="Email"
-          type="email"
-          onChange={onChangeEmail}
-          value={email}
-        />
-      </p>
-      <p>
-        <Input
-          placeholder="Senha"
-          type="password"
-          onChange={onChangePassword}
-          value={password}
-        />
-      </p>
-      <button onClick={submitLogin}>Enviar</button>
-      <Button variant="contained" onClick={GoToHome}>
-        Home
-      </Button>
-      <Button variant="contained" onClick={GoToAdmin}>
-        Admin
-      </Button>
-    </div>
+    <MainContainer>
+      <Buttons>
+        <Button variant="contained" onClick={GoToHome}>
+          Página Inicial
+        </Button>
+        <Button variant="contained" onClick={GoToAdmin}>
+          Administração
+        </Button>
+      </Buttons>
+      <Container>
+        <h2>Login</h2>
+        <p>
+          <Input
+            placeholder="Email"
+            type="email"
+            onChange={onChangeEmail}
+            value={email}
+          />
+        </p>
+        <p>
+          <Input
+            placeholder="Senha"
+            type="password"
+            onChange={onChangePassword}
+            value={password}
+          />
+        </p>
+        <Button variant="contained" onClick={submitLogin}>
+          Enviar
+        </Button>
+      </Container>
+    </MainContainer>
   );
 }
 
