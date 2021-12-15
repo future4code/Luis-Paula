@@ -14,13 +14,13 @@ const Header = () => {
           </Button>
         </Link>
         <Link to="/login" style={{ textDecoration: 'none' }}>
-          <StyledButton color="neutralColor">Login</StyledButton>
+          <StyledButton color="secondary">Login</StyledButton>
         </Link>
         <Link to="/post/:id" style={{ textDecoration: 'none' }}>
-          <StyledButton color="neutralColor">Post</StyledButton>
+          <StyledButton color="secondary">Post</StyledButton>
         </Link>
         <Link to="/signup" style={{ textDecoration: 'none' }}>
-          <StyledButton color="neutralColor">Inscreva-se</StyledButton>
+          <StyledButton color="secondary">Inscreva-se</StyledButton>
         </Link>
       </StyledToolbar>
     </AppBar>
