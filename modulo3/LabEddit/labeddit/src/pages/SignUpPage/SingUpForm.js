@@ -1,5 +1,5 @@
-import { Button, TextField } from '@material-ui/core';
-import React from 'react';
+import { Button, CircularProgress, TextField } from '@material-ui/core';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import useUnprotectedPage from '../../hooks/useUnprotectedPage';
@@ -12,6 +12,7 @@ const SignUpForm = ({ setButtonText }) => {
     password: '',
   });
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   useUnprotectedPage();
 
   const seePassword = () => {
@@ -25,7 +26,7 @@ const SignUpForm = ({ setButtonText }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    SignUp(form, navigate, setButtonText);
+    SignUp(form, navigate, setButtonText, setIsLoading);
     clear();
   };
 
@@ -78,7 +79,11 @@ const SignUpForm = ({ setButtonText }) => {
         fullWidth
         margin={'dense'}
       >
-        Cadastrar-se
+        {isLoading ? (
+          <CircularProgress color="inherit" size={24} />
+        ) : (
+          <>Cadastrar-se</>
+        )}
       </Button>
     </form>
   );

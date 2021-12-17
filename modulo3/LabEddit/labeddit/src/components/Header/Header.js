@@ -3,7 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { StyledButton, StyledToolbar } from './Styled';
-import { goToLogin } from '../routes/coordinates';
+import { goToLogin } from '../../routes/coordinates';
 
 const Header = ({ buttonText, setButtonText }) => {
   const token = localStorage.getItem('token');

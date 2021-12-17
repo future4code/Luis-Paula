@@ -1,5 +1,5 @@
-import { Button, TextField } from '@material-ui/core';
-import React from 'react';
+import { Button, CircularProgress, TextField } from '@material-ui/core';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import useUnprotectedPage from '../../hooks/useUnprotectedPage';
@@ -8,6 +8,7 @@ import { Login } from '../../services/users';
 const LoginForm = ({ setButtonText }) => {
   const [form, handleInputChange, clear] = useForm({ email: '', password: '' });
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   useUnprotectedPage();
 
   const seePassword = () => {
@@ -21,7 +22,7 @@ const LoginForm = ({ setButtonText }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    Login(form, navigate, setButtonText);
+    Login(form, navigate, setButtonText, setIsLoading);
     clear();
   };
 
@@ -62,7 +63,11 @@ const LoginForm = ({ setButtonText }) => {
         fullWidth
         margin={'dense'}
       >
-        Fazer Login
+        {isLoading ? (
+          <CircularProgress color="inherit" size={24} />
+        ) : (
+          <>Fazer Login</>
+        )}
       </Button>
     </form>
   );

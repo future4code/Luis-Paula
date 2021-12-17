@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './constants/theme';
 import Router from './routes/Router';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import { BrowserRouter } from 'react-router-dom';
 
 const App = () => {
