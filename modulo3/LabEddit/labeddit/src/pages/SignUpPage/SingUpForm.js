@@ -1,13 +1,18 @@
 import { Button, TextField } from '@material-ui/core';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
+import useUnprotectedPage from '../../hooks/useUnprotectedPage';
+import { SignUp } from '../../services/users';
 
-const SignUpForm = () => {
+const SignUpForm = ({ setButtonText }) => {
   const [form, handleInputChange, clear] = useForm({
-    name: '',
+    username: '',
     email: '',
     password: '',
   });
+  const navigate = useNavigate();
+  useUnprotectedPage();
 
   const seePassword = () => {
     const pass = document.getElementById('password');
@@ -20,18 +25,19 @@ const SignUpForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
+    SignUp(form, navigate, setButtonText);
+    clear();
   };
 
   return (
     <form onSubmit={onSubmit}>
       <TextField
-        id="name"
-        label="Nome"
+        id="username"
+        label="Nome de usuário"
         variant="outlined"
         type="text"
-        name="name"
-        value={form.name}
+        name="username"
+        value={form.username}
         onChange={handleInputChange}
         fullWidth
         margin={'dense'}

@@ -2,11 +2,11 @@ import React from 'react';
 import { MainContainer } from './StyledSingUp';
 import SignUpForm from './SingUpForm';
 
-const SignUpPage = () => {
+const SignUpPage = ({ setButtonText }) => {
   return (
     <MainContainer>
       <h1>Cadastre-se</h1>
-      <SignUpForm />
+      <SignUpForm setButtonText={setButtonText} />
     </MainContainer>
   );
 };

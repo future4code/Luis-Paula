@@ -1,10 +1,27 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { StyledButton, StyledToolbar } from './Styled';
+import { goToLogin } from '../routes/coordinates';
 
-const Header = () => {
+const Header = ({ buttonText, setButtonText }) => {
+  const token = localStorage.getItem('token');
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem('token');
+  };
+
+  const buttonAction = () => {
+    if (token) {
+      logout();
+      setButtonText('Login');
+      goToLogin(navigate);
+    } else {
+      goToLogin(navigate);
+    }
+  };
+
   return (
     <AppBar position="static">
       <StyledToolbar>
@@ -13,15 +30,9 @@ const Header = () => {
             <h3>LABEDDIT</h3>
           </Button>
         </Link>
-        <Link to="/login" style={{ textDecoration: 'none' }}>
-          <StyledButton color="secondary">Login</StyledButton>
-        </Link>
-        <Link to="/post/:id" style={{ textDecoration: 'none' }}>
-          <StyledButton color="secondary">Post</StyledButton>
-        </Link>
-        <Link to="/signup" style={{ textDecoration: 'none' }}>
-          <StyledButton color="secondary">Inscreva-se</StyledButton>
-        </Link>
+        <StyledButton color="secondary" onClick={buttonAction}>
+          {buttonText}
+        </StyledButton>
       </StyledToolbar>
     </AppBar>
   );

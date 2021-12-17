@@ -2,11 +2,13 @@ import { Button, TextField } from '@material-ui/core';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
-import { login } from '../../services/users';
+import useUnprotectedPage from '../../hooks/useUnprotectedPage';
+import { Login } from '../../services/users';
 
-const LoginForm = () => {
+const LoginForm = ({ setButtonText }) => {
   const [form, handleInputChange, clear] = useForm({ email: '', password: '' });
-  const navigate = useNavigate;
+  const navigate = useNavigate();
+  useUnprotectedPage();
 
   const seePassword = () => {
     const pass = document.getElementById('password');
@@ -19,7 +21,8 @@ const LoginForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    login(form, clear, navigate);
+    Login(form, navigate, setButtonText);
+    clear();
   };
 
   return (
