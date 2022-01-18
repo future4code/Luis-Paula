@@ -1,0 +1,12 @@
+{
+  "name": "exercicio-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index2.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Luis Gustavo",
+  "license": "ISC"
+}
