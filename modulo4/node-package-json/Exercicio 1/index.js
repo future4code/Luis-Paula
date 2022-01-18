@@ -13,6 +13,3 @@ console.log(result)
 //C
 const resultAdd = `Olá, ${inputName}! Você tem ${inputAge} anos. Em sete anos você terá ${inputAge + 7}`
 console.log(resultAdd)
-
-
-//3 
