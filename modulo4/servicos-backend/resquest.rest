@@ -1,0 +1,11 @@
+POST  http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "cep": "05424-150"
+}
+
+###
+
+GET http://localhost:3003/users?cep=05424-150
+Content-Type: application/json
