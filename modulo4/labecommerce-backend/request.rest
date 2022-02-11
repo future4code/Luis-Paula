@@ -1,0 +1,30 @@
+POST http://localhost:3001/users
+Content-Type: application/json
+
+{
+    "name": "Teste",
+    "email": "teste@email.com",
+    "password":"123456"
+}
+
+
+###
+
+POST http://localhost:3001/products
+Content-Type: application/json
+
+{
+    "name": "Item 4",
+    "price": 106.89,
+    "imageUrl": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
+}
+
+###
+
+GET http://localhost:3001/users
+Content-Type: application/json
+
+###
+
+GET http://localhost:3001/products
+Content-Type: application/json
