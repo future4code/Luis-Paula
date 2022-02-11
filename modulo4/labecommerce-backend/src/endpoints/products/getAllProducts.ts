@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { connection } from '../data/connection';
-import { productInputs } from '../data/inputs';
+import { connection } from '../../data/connection';
+import { productInputs } from '../../data/inputs';
 
 export const getAllProducts = async (
   req: Request,

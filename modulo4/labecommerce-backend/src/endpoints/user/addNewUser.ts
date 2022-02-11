@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { connection } from '../data/connection';
-import { User } from '../types';
+import { connection } from '../../data/connection';
+import { User } from '../../types';
 
 export const addNewUser = async (req: Request, res: Response): Promise<any> => {
   try {

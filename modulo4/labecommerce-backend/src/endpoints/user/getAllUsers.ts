@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { connection } from '../data/connection';
-import { userInputs } from '../data/inputs';
+import { connection } from '../../data/connection';
+import { userInputs } from '../../data/inputs';
 
 export const getAllUsers = async (
   req: Request,
