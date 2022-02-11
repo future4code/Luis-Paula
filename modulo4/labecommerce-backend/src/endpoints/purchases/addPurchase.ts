@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { connection } from '../data/connection';
-import { Purchase } from '../types';
+import { connection } from '../../data/connection';
+import { Purchase } from '../../types';
 
 export const addPurchase = async (req: Request, res: Response) => {
   try {

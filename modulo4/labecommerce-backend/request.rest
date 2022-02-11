@@ -39,3 +39,8 @@ Content-Type: application/json
 
 GET http://localhost:3001/products
 Content-Type: application/json
+
+###
+
+GET http://localhost:3001/users/{1644518881550}/purchases
+Content-Type: application/json
