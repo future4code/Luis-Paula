@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import { AuthenticationData } from '../types';
+import { AuthenticationData } from '../entities/interfaces';
 
 const expiresIn = '5m';
 export const generateToken = (input: AuthenticationData): string => {

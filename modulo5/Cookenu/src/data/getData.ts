@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import { AuthenticationData } from '../types';
+import { AuthenticationData } from '../entities/interfaces';
 
 export const getData = (token: string): AuthenticationData => {
   const payload = jwt.verify(token, process.env.JWT_KEY as string) as any;
