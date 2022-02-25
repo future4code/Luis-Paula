@@ -26,4 +26,15 @@ export class UserDataBase extends Connection {
       throw new Error(error.sqlMessage || error.message);
     }
   }
+  public async findUserById(id: string): Promise<User> {
+    try {
+      const user = await Connection.connection('Cookenu_user')
+        .select('*')
+        .where({ id });
+
+      return user[0] && User.toUserModel(user[0]);
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message);
+    }
+  }
 }

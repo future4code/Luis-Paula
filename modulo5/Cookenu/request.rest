@@ -27,3 +27,9 @@ Content-Type: application/json
     "title": "receita 1",
     "description": "essa é a receita 1"
 }
+
+###
+
+GET http://localhost:3001/user/profile
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBkNTg1NzgzLTVkMjUtNGI0ZC1hZWYzLWE4YzE4MzA5OWUzMyIsImlhdCI6MTY0NTgyMzc4MywiZXhwIjoxNjQ1OTEwMTgzfQ.g4VnQ39b0CCZJ5m_v_XS6ul2lB4_md2Oi1YLSnRYq_8
