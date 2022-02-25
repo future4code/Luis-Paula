@@ -33,3 +33,18 @@ Content-Type: application/json
 GET http://localhost:3001/user/profile
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBkNTg1NzgzLTVkMjUtNGI0ZC1hZWYzLWE4YzE4MzA5OWUzMyIsImlhdCI6MTY0NTgyMzc4MywiZXhwIjoxNjQ1OTEwMTgzfQ.g4VnQ39b0CCZJ5m_v_XS6ul2lB4_md2Oi1YLSnRYq_8
+
+###
+
+GET http://localhost:3001/user/{id}
+id: 0d585783-5d25-4b4d-aef3-a8c183099e33
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBkNTg1NzgzLTVkMjUtNGI0ZC1hZWYzLWE4YzE4MzA5OWUzMyIsImlhdCI6MTY0NTgyMzc4MywiZXhwIjoxNjQ1OTEwMTgzfQ.g4VnQ39b0CCZJ5m_v_XS6ul2lB4_md2Oi1YLSnRYq_8
+
+###
+
+
+GET http://localhost:3001/recipe/{id}
+id: 47f452ca-7ec8-4085-8a74-4d5b73b8c6f3
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBkNTg1NzgzLTVkMjUtNGI0ZC1hZWYzLWE4YzE4MzA5OWUzMyIsImlhdCI6MTY0NTgyMzc4MywiZXhwIjoxNjQ1OTEwMTgzfQ.g4VnQ39b0CCZJ5m_v_XS6ul2lB4_md2Oi1YLSnRYq_8

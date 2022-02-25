@@ -28,11 +28,25 @@ export class UserDataBase extends Connection {
   }
   public async findUserById(id: string): Promise<User> {
     try {
-      const user = await Connection.connection('Cookenu_user')
+      const [user] = await Connection.connection('Cookenu_user')
         .select('*')
         .where({ id });
 
-      return user[0] && User.toUserModel(user[0]);
+      return user && User.toUserModel(user);
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message);
+    }
+  }
+
+  public async getUsersById(id: string): Promise<any> {
+    try {
+      const users = await Connection.connection('Cookenu_user')
+        .select('id', 'name', 'email')
+        .where('id', id);
+
+      return users.map((user: string) => {
+        User.toUserModel(user);
+      });
     } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
     }

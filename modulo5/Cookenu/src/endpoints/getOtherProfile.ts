@@ -1,16 +1,13 @@
 import { Request, Response } from 'express';
-import { getData } from '../data/getData';
-import { RecipeDataBase } from '../data/recipeDataBase';
+import { UserDataBase } from '../data/userDataBase';
 
-export const getRecipe = async (req: Request, res: Response) => {
+export const getOtherProfile = async (req: Request, res: Response) => {
   try {
     const token = req.headers.authorization as string;
     const id = req.params.id;
 
-    const auth = getData(token);
-
-    const recipeDataBase = new RecipeDataBase();
-    const recipe = await recipeDataBase.getRecipesById(id);
+    const userDataBase = new UserDataBase();
+    const user = await userDataBase.getUsersById(id);
 
     if (!token) {
       res.statusCode = 422;
@@ -19,9 +16,7 @@ export const getRecipe = async (req: Request, res: Response) => {
       );
     }
 
-    res.status(200).send({
-      recipe,
-    });
+    res.status(200).send({ user });
   } catch (error: any) {
     res.send({ message: error.message });
   }
