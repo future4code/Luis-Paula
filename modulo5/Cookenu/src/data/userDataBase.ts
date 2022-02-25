@@ -21,7 +21,7 @@ export class UserDataBase extends Connection {
         .select('*')
         .where({ email });
 
-      return User.toUserModel(user[0]);
+      return user[0] && User.toUserModel(user[0]);
     } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
     }
