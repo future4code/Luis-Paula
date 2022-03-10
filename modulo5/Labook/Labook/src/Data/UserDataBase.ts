@@ -12,17 +12,10 @@ export class UserDataBase extends BaseDataBase {
   };
 
   selectUserByEmail = async (email: string) => {
-    const queryResult: any = await BaseDataBase.connection('labook_users')
+    const user: any = await BaseDataBase.connection('labook_users')
       .select('*')
       .where({ email });
 
-    const user: user = {
-      id: queryResult[0].id,
-      name: queryResult[0].name,
-      email: queryResult[0].email,
-      password: queryResult[0].password,
-    };
-
-    return user;
+    return user[0];
   };
 }

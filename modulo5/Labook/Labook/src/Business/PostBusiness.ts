@@ -1,4 +1,5 @@
 import { PostDataBase } from '../Data/PostDataBase';
+import { authenticationData } from '../Model/AuthenticationData';
 import { postData } from '../Model/Post';
 import { Authenticator } from '../Services/Authenticator';
 import { IdGenerator } from '../Services/IdGenerator';
@@ -43,16 +44,12 @@ export class PostBusiness {
       throw new Error(message);
     }
 
-    const tokenData: authenticationData = auth.getTokenData(
-      this.createPost as any
-    );
-
     const userInfo = {
       id: result.id,
       photo: result.photo,
       description: result.description,
       type: result.type,
-      authorId: tokenData,
+      authorId: result.authorId,
       created_at: result.createdAt,
     };
 

@@ -31,6 +31,11 @@ export class UserControler extends BaseDataBase {
       const user = await userBusiness.login(email, password);
 
       res.send(user);
-    } catch (error) {}
+    } catch (error: any) {
+      res.statusCode = 400;
+      let message = error.sqlMessage || error.message;
+
+      res.send({ message });
+    }
   };
 }

@@ -10,59 +10,53 @@ const auth = new Authenticator();
 const userDB = new UserDataBase();
 
 export class UserBusiness {
-  signUp = async (user: userData): Promise<string | undefined> => {
-    try {
-      let message = 'Success!';
-      if (!user.name || !user.email || !user.password) {
-        message = '"name", "email" and "password" must be provided';
-        throw new Error(message);
-      }
+  signUp = async (user: userData) => {
+    let message = 'Success!';
+    if (!user.name || !user.email || !user.password) {
+      message = '"name", "email" and "password" must be provided';
+      throw new Error(message);
+    }
 
-      const cypherPassword = await hash.hash(user.password);
-      const id: string = idGenerator.generateId();
+    const cypherPassword = await hash.hash(user.password);
+    const id: string = idGenerator.generateId();
 
-      const newUser = {
-        ...user,
-        password: cypherPassword,
-        id,
-      };
+    const newUser = {
+      ...user,
+      password: cypherPassword,
+      id,
+    };
 
-      const token: string = auth.generateToken({ id: newUser.id });
+    const token: string = auth.generateToken({ id: newUser.id });
 
-      return token;
-    } catch (error) {}
+    return token;
   };
 
-  login = async (email: string, password: string): Promise<any> => {
-    try {
-      let message = 'Success!';
-      const result: user = await userDB.selectUserByEmail(email);
+  login = async (email: string, password: string) => {
+    let message = 'Success!';
+    const result: user = await userDB.selectUserByEmail(email);
 
-      if (!email || !password) {
-        message = '"email" and "password" must be provided';
-        throw new Error(message);
-      }
+    if (!email || !password) {
+      message = '"email" and "password" must be provided';
+      throw new Error(message);
+    }
 
-      if (!result) {
-        message = 'Email não encontrado';
-        throw new Error(message);
-      }
+    if (!result) {
+      message = 'Email não encontrado';
+      throw new Error(message);
+    }
 
-      const passwordIsCorrect: boolean = await hash.compare(
-        password,
-        result.password
-      );
+    const passwordIsCorrect: boolean = await hash.compare(
+      password,
+      result.password
+    );
 
-      if (!passwordIsCorrect) {
-        message = 'Password incorreto';
-        throw new Error(message);
-      }
+    if (!passwordIsCorrect) {
+      message = 'Password incorreto';
+      throw new Error(message);
+    }
 
-      const token: string = auth.generateToken({
-        id: result.id,
-      });
+    const token: string = auth.generateToken({ id: result.id });
 
-      return { message, token };
-    } catch (error) {}
+    return { message, token };
   };
 }

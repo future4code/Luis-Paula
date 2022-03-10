@@ -9,4 +9,8 @@ export type postData = {
   type: POST_TYPES;
 };
 
-export type post = postData & { id: string; createdAt: Date; authorId: string };
+export type post = postData & {
+  id: string;
+  createdAt: Date;
+  authorId: string;
+};
