@@ -3,12 +3,8 @@ import { BaseDataBase } from './BaseDataBase';
 
 export class PostDataBase extends BaseDataBase {
   createPost = async (post: post) => {
-    await connection('labook_posts').insert({
-      id: post.id,
-      photo: post.photo,
-      description: post.description,
-      type: post.type,
-      author_id: tokenData.id,
+    await BaseDataBase.connection('labook_posts').insert({
+      post,
     });
   };
 
@@ -16,11 +12,6 @@ export class PostDataBase extends BaseDataBase {
     const queryResult: any = await BaseDataBase.connection('labook_posts')
       .select('*')
       .where({ id });
-
-    if (!queryResult[0]) {
-      message = 'Post not found';
-      throw new Error(message);
-    }
 
     const post: post = {
       id: queryResult[0].id,

@@ -1,20 +1,21 @@
 import { Request, Response } from 'express';
+import { UserBusiness } from '../Business/UserBusiness';
 import { BaseDataBase } from '../Data/BaseDataBase';
-import { user } from '../Model/User';
+
+const userBusiness = new UserBusiness();
 
 export class UserControler extends BaseDataBase {
   signUp = async (req: Request, res: Response) => {
     try {
       const { name, email, password } = req.body;
 
-      await BaseDataBase.connection('labook_users').insert({
-        id,
+      const token = await userBusiness.signUp({
         name,
         email,
-        password: cypherPassword,
+        password,
       });
 
-      res.status(201).send({ message, token });
+      res.status(201).send({ message: 'Usuário criado', token });
     } catch (error: any) {
       res.statusCode = 400;
       let message = error.sqlMessage || error.message;
@@ -27,24 +28,9 @@ export class UserControler extends BaseDataBase {
     try {
       const { email, password } = req.body;
 
-      const queryResult: any = await BaseDataBase.connection('labook_users')
-        .select('*')
-        .where({ email });
+      const user = await userBusiness.login(email, password);
 
-      if (!queryResult[0]) {
-        res.statusCode = 401;
-        message = 'Invalid credentials';
-        throw new Error(message);
-      }
-
-      const user: user = {
-        id: queryResult[0].id,
-        name: queryResult[0].name,
-        email: queryResult[0].email,
-        password: queryResult[0].password,
-      };
-
-      res.send({ user });
+      res.send(user);
     } catch (error) {}
   };
 }

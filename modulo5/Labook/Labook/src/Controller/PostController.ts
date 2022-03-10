@@ -1,4 +1,7 @@
 import { Request, Response } from 'express';
+import { PostBusiness } from '../Business/PostBusiness';
+
+const postBusiness = new PostBusiness();
 
 export class PostController {
   createPost = async (req: Request, res: Response) => {
@@ -6,18 +9,11 @@ export class PostController {
       let message = 'Success!';
 
       const { photo, description, type } = req.body;
-      const token: string = req.headers.authorization as string;
 
-      const tokenData: authenticationData = getTokenData(token);
-
-      const id: string = generateId();
-
-      await connection('labook_posts').insert({
-        id,
+      await postBusiness.createPost({
         photo,
         description,
         type,
-        author_id: tokenData.id,
       });
 
       res.status(201).send({ message });
@@ -35,27 +31,10 @@ export class PostController {
 
       const { id } = req.params;
 
-      const queryResult: any = await connection('labook_posts')
-        .select('*')
-        .where({ id });
-
-      if (!queryResult[0]) {
-        res.statusCode = 404;
-        message = 'Post not found';
-        throw new Error(message);
-      }
-
-      const post: post = {
-        id: queryResult[0].id,
-        photo: queryResult[0].photo,
-        description: queryResult[0].description,
-        type: queryResult[0].type,
-        createdAt: queryResult[0].created_at,
-        authorId: queryResult[0].author_id,
-      };
+      const post = await postBusiness.getPostById(id);
 
       res.status(200).send({ message, post });
-    } catch (error) {
+    } catch (error: any) {
       let message = error.sqlMessage || error.message;
       res.statusCode = 400;
 
