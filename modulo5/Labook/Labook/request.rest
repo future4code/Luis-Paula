@@ -21,6 +21,7 @@ Content-Type: application/json
 
 POST http://localhost:3003/posts/create
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU0ZTUyMzJmLTExMGUtNDhmMS05N2VjLWU5MjQxMTZmZTRjMyIsImlhdCI6MTY0NzAwMTY1NiwiZXhwIjoxNjQ3MDAxOTU2fQ.SMtMm75Hx5z861SSZUsXRokSRs8tr5eZwX5oLFnm-KM
 
 {
     "photo":"https://i.picsum.photos/id/238/200/200.jpg?hmac=O4Jc6lqHVfaKVzLf8bWssNTbWzQoaRUC0TDXod9xDdM",
