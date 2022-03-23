@@ -1,14 +1,16 @@
 import { Request, Response } from 'express';
+import { PizzaBusiness } from '../Business/PizzaBusiness';
 import { BaseDatabase } from '../Data/BaseDataBase';
 import { PizzaDataBase } from '../Data/PizzaDataBase';
+import { OrderDTO } from '../Model/Pizza';
 import { IdGenerator } from '../Services/IdGenerator';
-const pizzaDB = new PizzaDataBase();
-const idGenerator = new IdGenerator();
+
+const businessDB = new PizzaBusiness(new IdGenerator(), new PizzaDataBase());
 export class PizzaController {
   public async getPizzas(req: Request, res: Response) {
     try {
-      const pizzas = await pizzaDB.getPiza();
-      res.status(200).send({ pizzas });
+      const result = await businessDB.getPizzas();
+      res.status(200).send({ result });
     } catch (error: any) {
       res.status(400).send({ error: error.message });
     }
@@ -18,9 +20,12 @@ export class PizzaController {
 
   public async addOrder(req: Request, res: Response) {
     try {
-      const { id, quantity, pizzaId } = req.body;
-      const order = await pizzaDB.addOrder(id, quantity, pizzaId);
-      res.status(200).send({ message: 'Pedido adicionado' });
+      const input: OrderDTO = {
+        quantity: req.body.quantity,
+        pizza_id: req.body.pizzaId,
+      };
+      const result = await businessDB.addOrder(input);
+      res.status(200).send({ result });
     } catch (error: any) {
       res.status(400).send({ error: error.message });
     }
@@ -29,8 +34,8 @@ export class PizzaController {
 
   public async getOrders(req: Request, res: Response) {
     try {
-      const orders = await pizzaDB.getOrders();
-      res.status(200).send({ orders });
+      const result = await businessDB.getOrders();
+      res.status(200).send({ result });
     } catch (error: any) {
       res.status(400).send({ error: error.message });
     }
@@ -41,8 +46,8 @@ export class PizzaController {
   public async getOrderById(req: Request, res: Response) {
     try {
       const id = req.params.id;
-      const pizzas = await pizzaDB.getOrderById(id);
-      res.status(200).send({ pizzas });
+      const result = await businessDB.getOrderById(id);
+      res.status(200).send({ result });
     } catch (error: any) {
       res.status(400).send({ error: error.message });
     }

@@ -5,7 +5,7 @@ export class PizzaDataBase extends BaseDatabase {
   private static TABLE_NAME_1 = 'Pizzas';
   private static TABLE_NAME_2 = 'Orders';
 
-  public async getPiza(): Promise<Pizza> {
+  public async getPizza(): Promise<Pizza> {
     const result = await this.getConnection()
       .select('*')
       .from(PizzaDataBase.TABLE_NAME_1);
@@ -41,7 +41,7 @@ export class PizzaDataBase extends BaseDatabase {
       .select('*')
       .from(PizzaDataBase.TABLE_NAME_2)
       .join(PizzaDataBase.TABLE_NAME_1, 'Orders.pizza_id', '=', 'Pizzas.id')
-      .where({ 'Orders.id': id });
+      .where({ 'Orders.order_id': id });
 
     return result[0];
   }
