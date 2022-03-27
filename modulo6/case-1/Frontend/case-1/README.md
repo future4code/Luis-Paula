@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Case 1 - Ambulnz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Links
 
-## Available Scripts
+# Surge
 
-In the project directory, you can run:
+https://cautious-shake.surge.sh
 
-### `npm start`
+# Link Documentação
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://documenter.getpostman.com/view/18385386/UVsSP45b
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Link Heroku
 
-### `npm test`
+https://backend-case-1.herokuapp.com
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Objetivo do projeto
 
-### `npm run build`
+Criar um sistema de pizzaria, onde seria possível adicionar pizzas aos pedidos, ver a lista de pedidos, de pizzas e ver cada pedido individualmente. Fazendo do zero o backend e frontend.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tecnologia usadas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Backend: Express, Knex, Cors, Typescript, Uuid
+Frontend: React, Javascript, styled-components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Impressões do projeto
 
-### `npm run eject`
+Foi um projeto desafiador, onde tive bastante dificuldade em entender como criar o backend e o que precisava ser implementado. Além de ter tido dificuldades em implementar o frontend e relembrar tudo o que estudei.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## O que funciona
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+O backend como um todo está funcional, sendo possível fazer as requisições e pegar os dados, já o frontend só é possível ver a lista de pizzas e a lista de pedidos.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## O que não funciona
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Não consegui implementar muitas coisas do frontend, sendo as principais a função de adicionar um pedido ao banco de dados e a função de pegar os dados de cada pedido individualmente.
 
-## Learn More
+## O que poderia melhorar
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+No backend acredito que poderia implementar a forma que fiz a parte de ingredientes, implementar uma imagem para cada pizza e talvez uma imagem para cada ingrediente, foram coisas que vi necessidade somente quando comecei o frontend.
+No frontend muita coisa poderia melhorar, ao começar pelas funções que faltam serem implementadas, o design do projeto está muito ruim por ter sido feito as pressas,responsividade precisa ser implementada, no geral o frontend está muito ruim em comparação ao que planejava ter feito.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Considerações finais
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Foi um projeto que gostei de fazer, tive muitas dificuldades no backend e demorei demais pra finalizar o que me atrapalhou muito no frontend e me deixou com menos tempo. Mas amei a experiência de fazer um projeto fullstack, nunca tinha feito o backend e o frontend juntos desde o início e acredito que tenha sido um gande aprendizado, pois aprendi a fazer muitas coisas que não tinha noção de como fazer.

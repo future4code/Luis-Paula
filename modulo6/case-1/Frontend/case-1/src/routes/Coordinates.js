@@ -6,6 +6,6 @@ export const goToOrders = (navigate) => {
   navigate('/orders');
 };
 
-export const goToOrderById = (navigate, id) => {
+export const goToOrder = (navigate, id) => {
   navigate(`/orders/${id}`);
 };
