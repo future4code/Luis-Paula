@@ -1,0 +1,32 @@
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+	"name": "Michael Scott",
+    "nickname": "Prison Mike",
+	"email": "michael@dundermifflin.com",
+	"password": "theboss",
+	"role": "ADMIN"
+}
+
+###
+
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+	"email": "michael@dundermifflin.com",
+	"password": "theboss"
+}
+
+###
+
+GET http://localhost:3003/all
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIyMDQwNDIzLTY2MDktNDgwZS05Yjk5LWJkZjhkOTMyZWZlZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY0NjY4NzA0MCwiZXhwIjoxNjQ2Njg4NDgwfQ.hVT6eLvwkN1rNlsdXMkIRs3eTKHXUgU78KJKriO-Vl0
+
+###
+
+DELETE http://localhost:3003/{b2040423-6609-480e-9b99-bdf8d932efef}
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIyMDQwNDIzLTY2MDktNDgwZS05Yjk5LWJkZjhkOTMyZWZlZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY0NjY4NzA0MCwiZXhwIjoxNjQ2Njg4NDgwfQ.hVT6eLvwkN1rNlsdXMkIRs3eTKHXUgU78KJKriO-Vl0
