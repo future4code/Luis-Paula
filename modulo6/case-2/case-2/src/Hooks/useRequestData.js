@@ -9,6 +9,7 @@ const useRequestData = (initialData, url) => {
       .get(url)
       .then((res) => {
         setData(res.data);
+        console.log(res.data);
       })
       .catch((err) => {
         alert('Ocorreu um erro, tente novamente!');
