@@ -1,11 +1,11 @@
 import React from 'react';
-import Router from './Routes/Router';
 import GlobalFonts from './Fonts/Fonts';
+import { HomePage } from './Pages/HomePage/HomePage';
 function App() {
   return (
     <div>
       <GlobalFonts />
-      <Router />
+      <HomePage />
     </div>
   );
 }
