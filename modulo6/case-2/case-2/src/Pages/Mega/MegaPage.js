@@ -1,26 +1,22 @@
 import React from 'react';
 import { Base_URL } from '../../Constants/Base_URL';
 import useRequestData from '../../Hooks/useRequestData';
+import { H1 } from './Styled';
 
 export const MegaPage = () => {
-  const data = useRequestData([], `${Base_URL}/loterias-concursos`);
+  const data = useRequestData([], `${Base_URL}/concursos/2359`);
+  const numbers = data.numeros;
 
-  const getData = data.map((i) => {
-    if (i.loteriaId === 0) {
-      return (
-        <div>
-          {i.loteriaId}, {i.concursoId}
-        </div>
-      );
-    }
-  });
-
-  console.log(getData);
+  const result =
+    Array.isArray(numbers) &&
+    numbers.map((i) => {
+      return <div>{i} </div>;
+    });
 
   return (
     <div>
-      <h1>Mega</h1>
-      {getData}
+      <H1>Mega</H1>
+      {result}
     </div>
   );
 };

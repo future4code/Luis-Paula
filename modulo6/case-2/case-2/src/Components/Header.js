@@ -1,7 +1,4 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Base_URL } from '../Constants/Base_URL';
-import useRequestData from '../Hooks/useRequestData';
 import {
   goToFacil,
   goToMania,
