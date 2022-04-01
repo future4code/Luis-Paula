@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { getIdResult, getJoinResults, getLotoResults } from '../../API/getters';
 import {
-  colorFacil,
-  colorMania,
-  colorMega,
-  colorQuina,
-  Colors,
-  colorSorte,
-  colorTime,
-} from '../../Constants/colors';
-import { H1, MainContainer, SecondaryContainer } from './Styled';
+  Div,
+  H1,
+  MainContainer,
+  P,
+  SecondaryContainer,
+  Selector,
+} from './Styled';
 
 export const HomePage = () => {
   const [loto, setLoto] = useState({ id: 0, nome: 'mega-sena' });
@@ -29,27 +27,12 @@ export const HomePage = () => {
       }
     });
   }, [joinLoto]);
+  // console.log(joinLoto);
 
   const onChangeSelectedLoto = (event) => {
     resultLoto.filter((i) => {
       if (event.target.value === i.id.toString()) {
         setLoto(i);
-        switch (i.id) {
-          case 0:
-            return Colors.colorMega;
-          case 1:
-            return Colors.colorQuina;
-          case 2:
-            return Colors.colorFacil;
-          case 3:
-            return Colors.colorMania;
-          case 4:
-            return Colors.colorTime;
-          case 5:
-            return Colors.colorSorte;
-          default:
-            break;
-        }
       }
     });
   };
@@ -68,16 +51,18 @@ export const HomePage = () => {
       return <SecondaryContainer key={i}>{i}</SecondaryContainer>;
     });
 
-  console.log(renderLoto);
+  console.log(idLoto.data);
   return (
-    <div>
-      <div>
-        <select onChange={onChangeSelectedLoto}>{renderLoto}</select>
-        <H1>{loto.nome}</H1>
-      </div>
+    <Div cor={loto.id}>
+      <Selector onChange={onChangeSelectedLoto}>{renderLoto}</Selector>
+      <H1>{loto.nome.toUpperCase()}</H1>
       <div>
         <MainContainer>{renderNumbers}</MainContainer>
+        <P>
+          Este sorteio é meramente ilustrativo e não possui nenhuma ligação com
+          a CAIXA.
+        </P>
       </div>
-    </div>
+    </Div>
   );
 };
