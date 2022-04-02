@@ -32,11 +32,13 @@ const pegarCor = (cor) => {
 
 export const H1 = styled.h1`
   font-family: 'Montserrat';
-  /* background-color: blue; */
   margin-top: 50vh;
   margin-left: -8vw;
-  /* padding: 40vh 20vw 30vh 0; */
-  /* padding-right: 0vw; */
+
+  @media only screen and (max-width: 600px) {
+    margin-top: 0;
+    margin-left: 20vw;
+  }
 `;
 
 export const MainContainer = styled.div`
@@ -44,9 +46,18 @@ export const MainContainer = styled.div`
   flex-wrap: wrap;
   padding: 40vh 60vw 40vh 0vw;
   background-color: #efefef;
-  margin-top: 0vh;
+  margin-left: 50px;
   border-bottom-left-radius: 20%;
   border-top-left-radius: 20%;
+
+  @media only screen and (max-width: 600px) {
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 0;
+    padding: 0 17vw 55.6vh 10vw;
+    margin-left: 0;
+    height: fit-content;
+  }
 `;
 
 export const SecondaryContainer = styled.div`
@@ -56,11 +67,21 @@ export const SecondaryContainer = styled.div`
   margin: 1vh;
   font-size: 4vh;
   background-color: white;
+
+  @media only screen and (max-width: 600px) {
+    margin-left: 10vw;
+  }
 `;
 
 export const Div = styled.div`
   display: flex;
   align-items: flex-start;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    height: 97.7vh;
+  }
+
   ${({ cor }) => pegarCor(cor)}
 `;
 
@@ -69,6 +90,14 @@ export const Selector = styled.select`
   margin-top: 15vh;
   width: 10vw;
   height: 5vh;
+  text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    margin-left: 20vw;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    width: 50vw;
+  }
 `;
 
 export const P = styled.p`
@@ -76,4 +105,9 @@ export const P = styled.p`
   position: absolute;
   margin-top: -15vh;
   margin-left: 15vw;
+
+  @media only screen and (max-width: 600px) {
+    margin-top: -50vh;
+    margin-left: 0;
+  }
 `;

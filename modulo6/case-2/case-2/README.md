@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Case 2 - Brainn
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Link Surge
 
-## Available Scripts
+https://careless-jewel.surge.sh
 
-In the project directory, you can run:
+## Objetivo do projeto
 
-### `npm start`
+Criar um site que busca resultados das loterias a partir de uma api.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Como usar o site
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+É bem simples usar o site, clicando no menu de opções/select é possível mudar o sorteio da loteria e buscar entre as 6 opções de sorteio, sendo eles, Mega-sena, Quina, Lotofácil, Lotomania, Timemania e Dia de sorte.
 
-### `npm test`
+## Tecnologia usadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React, Javascript, styled-components.
 
-### `npm run build`
+## Impressões do projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Foi um projeto desafiador, onde tive bastante dificuldade em entender como criar o select, tentei uma primeira vez usando o Router e Hooks pois vi que era um dos desafios do projeto porém não estava conseguindo e decidi ir para o caminho mais fácil. Após isso minha maior dificuldade foi mudar as cor de fundo conforme mudava o sorteio, porém com a ajuda de amigos consegui. No mais foi um projeto que me desafiou muito pois o CSS aplicado nele é bem complexo apesar do design simples.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## O que poderia melhorar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+O principal elemento que deve melhorar é o design do site, não está igual ao proposto, está o mais parecido que consegui deixar mas ainda está muito diferente do design esperado. Também não consegui retornar a requisição do número do concurso e o tempo da consulta. Acredito que se conseguisse resolver esses dois problemas o projeto estaria perfeito.
 
-### `npm run eject`
+## Considerações finais
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Foi um projeto que gostei de fazer, decidi fazer para melhorar meu frontend que no primeiro projeto vi que não dominava tanto quanto pensava, porém acredito que melhorei muito no frontend e relembrei muitas coisas em uma semana. Amei esse projeto, algumas coisas não saíram como o esperado porém foi um ótimo desafio para mostrar o quanto e no que preciso melhorar.

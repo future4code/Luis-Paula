@@ -27,7 +27,6 @@ export const HomePage = () => {
       }
     });
   }, [joinLoto]);
-  // console.log(joinLoto);
 
   const onChangeSelectedLoto = (event) => {
     resultLoto.filter((i) => {
