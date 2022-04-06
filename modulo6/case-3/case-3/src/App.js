@@ -1,9 +1,10 @@
 import React from 'react';
+import { Router } from './Routes/Router';
 
 function App() {
   return (
     <div>
-      <h1>Promobit</h1>
+      <Router />
     </div>
   );
 }
