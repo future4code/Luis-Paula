@@ -2,9 +2,9 @@ import axios from 'axios';
 import { Base_URL } from '../Constants/Base_URL';
 import { key } from '../Constants/apiKey';
 
-export const getMovies = (setData) => {
+export const getMovies = (setData, page) => {
   axios
-    .get(`${Base_URL}/movie/popular/?${key}&language=pt-BR&page=1`)
+    .get(`${Base_URL}/movie/popular/?${key}&language=pt-BR&page=${page}`)
     .then((res) => {
       setData(res.data.results);
     })

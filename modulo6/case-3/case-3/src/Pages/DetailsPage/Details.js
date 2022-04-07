@@ -16,6 +16,12 @@ export const DetailsPage = () => {
     <div>
       <h1>Details</h1>
       {data.title}
+      <div>
+        <img
+          src={`https://image.tmdb.org/t/p/w200${data.poster_path}`}
+          alt='movie_poster'
+        />
+      </div>
     </div>
   );
 };
