@@ -23,3 +23,47 @@ export const getDetails = (setData, id) => {
       alert(err.message);
     });
 };
+
+export const getActors = (setData, id) => {
+  axios
+    .get(`${Base_URL}/movie/${id}/credits?${key}&language=pt-BR`)
+    .then((res) => {
+      setData(res.data.cast);
+    })
+    .catch((err) => {
+      alert(err.message);
+    });
+};
+
+export const getCrew = (setData, id) => {
+  axios
+    .get(`${Base_URL}/movie/${id}/credits?${key}&language=pt-BR`)
+    .then((res) => {
+      setData(res.data.crew);
+    })
+    .catch((err) => {
+      alert(err.message);
+    });
+};
+
+export const getVideo = (setData, id) => {
+  axios
+    .get(`${Base_URL}/movie/${id}/videos?${key}`)
+    .then((res) => {
+      setData(res.data.results);
+    })
+    .catch((err) => {
+      alert(err.message);
+    });
+};
+
+export const getRecommendations = (setData, id) => {
+  axios
+    .get(`${Base_URL}/movie/${id}/recommendations?${key}`)
+    .then((res) => {
+      setData(res.data.results);
+    })
+    .catch((err) => {
+      alert(err.message);
+    });
+};

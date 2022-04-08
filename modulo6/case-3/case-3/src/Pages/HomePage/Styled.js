@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
-  border: hidden;
-  background-color: transparent;
-`;
-
 export const Img = styled.img`
   border-radius: 3%;
 `;
@@ -23,3 +18,16 @@ export const SecondaryContainer = styled.div`
   padding-top: 50px;
   padding-bottom: 90px;
 `;
+
+export const P = styled.p`
+  font-weight: 900;
+  text-align: left;
+`;
+
+export const Date = styled.p`
+  text-align: left;
+  font-weight: 700;
+  color: #646464;
+`;
+
+// overflow-x
