@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+## Case 3 - Promobit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Link Surge
 
-## Available Scripts
+http://case-luis.surge.sh
 
-In the project directory, you can run:
+## Tecnologia usadas
 
-### `npm start`
+React, Javascript, styled-components, axios e reac-router-dom v6.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Objetivo do projeto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Criar um site que contém informações sobre filmes, podendo ter acesso as informações de cada filme ao clicar nele.
 
-### `npm test`
+## Como usar o site
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+É bem simples usar o site, na página inicial terá uma lista de filmes, podendo clicar em cada um deles e ter acesso as informações de cada filme. Ao acessar a página de um certo filme poderá ver todas as informações relevantes do filme, como nota dada pelos usuários, atores, duração, trailers e mais. Para voltar a página inicial basta clicar no TMDB no canto superior da tela.
 
-### `npm run build`
+## O que poderia melhorar
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Acredito que apenas duas coisas poderiam melhorar, sendo a primeira a paginação do site, apesar de ter feito toda a lógica de paginação não consegui fazer funcionar. E a segunda coisa são os filtros, eu tentei umas coisas como igualar ids porém não funcionou, também não consegui marcar mais de uma opção no filtro. Fora isso o projeto em si está funcional e estou feliz com o resultado final.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Impressões do projeto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Foi um projeto desafiador, onde consegui entender e usar bem a api disponibilizada. Consegui também melhorar muito minhas noções de css, onde fiz muitas coisas que achava difícil e vi que melhorei muito desde os últimos projetos. Gostei bastante de trabalhar com esse case, é um case desafiador na medida certa, não dando todas as informações e fazendo correr atrás de tudo. No fim fiquei satisfeito com o resultado final e feliz por ter entregado o mais fiel possível ao design proposto.

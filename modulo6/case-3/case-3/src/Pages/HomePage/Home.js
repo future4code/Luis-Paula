@@ -9,13 +9,12 @@ import { DateConversor } from '../../Services/DateConversor';
 
 export const HomePage = () => {
   const [movieData, setMovieData] = useState([]);
-  const { actualPage } = useState(1);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    getMovies(setMovieData, actualPage);
-  }, [actualPage]);
+    getMovies(setMovieData);
+  }, []);
 
   const clickDetails = (id) => {
     goToDetails(navigate, id);
