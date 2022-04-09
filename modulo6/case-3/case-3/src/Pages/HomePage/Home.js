@@ -2,16 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { getMovies } from '../../API/getRequests';
 import { useNavigate } from 'react-router-dom';
 import { goToDetails } from '../../Routes/Coordinates';
-import {
-  Button,
-  Date,
-  Img,
-  MainContainer,
-  P,
-  SecondaryContainer,
-} from './Styled';
-import { Footer } from '../../Components/Footer/Footer';
+import { Date, Img, MainContainer, P, SecondaryContainer } from './Styled';
 import { Header } from '../../Components/Header/Header';
+import { Footer } from '../../Components/Footer/Footer';
+import { DateConversor } from '../../Services/DateConversor';
 
 export const HomePage = () => {
   const [movieData, setMovieData] = useState([]);
@@ -40,7 +34,7 @@ export const HomePage = () => {
           alt='poster'
         />
         <P>{item.title}</P>
-        <Date>{item.release_date.split('-').reverse().join('/')}</Date>
+        <Date>{DateConversor(item.release_date)}</Date>
       </SecondaryContainer>
     );
   });

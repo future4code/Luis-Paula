@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getCrew, getDetails } from '../../API/getRequests';
 import {
   Crew,
@@ -9,20 +9,27 @@ import {
   Info,
   MainContainer,
   Review,
+  ReviewContainer,
   SecondaryContainer,
   TerciaryContainer,
   Title,
 } from './Styled';
+import { goToHome } from '../../Routes/Coordinates';
 
 export const DetailsComp = () => {
   const params = useParams();
   const [details, setDetails] = useState([]);
   const [crew, setCrew] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getDetails(setDetails, params.id);
     getCrew(setCrew, params.id);
   }, []);
+
+  const clickHome = () => {
+    goToHome(navigate);
+  };
 
   const renderGenres =
     details.genres &&
@@ -30,7 +37,6 @@ export const DetailsComp = () => {
       return genre.name + ' ';
     });
 
-  console.log(crew);
   const renderCrew = crew.slice(0, 5).map((i) => {
     return (
       <div key={i.credit_id}>
@@ -42,7 +48,13 @@ export const DetailsComp = () => {
 
   return (
     <MainContainer>
-      <H1>TMDB</H1>
+      <H1
+        onClick={() => {
+          clickHome();
+        }}
+      >
+        TMDB
+      </H1>
       <SecondaryContainer>
         <Img
           src={`https://image.tmdb.org/t/p/w500${details.poster_path}`}
@@ -60,10 +72,10 @@ export const DetailsComp = () => {
               details.release_date.split('-').reverse().join('/')}{' '}
             (BR) - {renderGenres} - {details.runtime}m
           </Genres>
-          <div>
+          <ReviewContainer>
             <h4>Avaliação dos usuários</h4>
             <Review>{details.vote_average} </Review>
-          </div>
+          </ReviewContainer>
           <div>
             <h3>Sinopse</h3>
             <br />

@@ -3,10 +3,12 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getActors, getRecommendations, getVideo } from '../../API/getRequests';
 import { DetailsComp } from '../../Components/Details/DetailsComp';
 import { goToDetails } from '../../Routes/Coordinates';
+import { DateConversor } from '../../Services/DateConversor';
 import {
   ActorsCards,
   ActorsDiv,
   Cast,
+  Date,
   MainContainer,
   RecommendationCards,
   RecommendationDiv,
@@ -31,7 +33,6 @@ export const DetailsPage = () => {
   const clickDetails = (id) => {
     goToDetails(navigate, id);
   };
-  console.log(recommendations);
 
   const renderActors =
     actors &&
@@ -81,7 +82,7 @@ export const DetailsPage = () => {
             alt={`poster do filme ${i.title}`}
           />
           <h2>{i.title}</h2>
-          <p>{i.release_date}</p>
+          <Date>{DateConversor(i.release_date)}</Date>
         </RecommendationCards>
       );
     });

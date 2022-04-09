@@ -67,3 +67,14 @@ export const getRecommendations = (setData, id) => {
       alert(err.message);
     });
 };
+
+export const getGenres = (setData) => {
+  axios
+    .get(`${Base_URL}/genre/movie/list?${key}&language=pt-BR`)
+    .then((res) => {
+      setData(res.data.genres);
+    })
+    .catch((err) => {
+      alert(err.message);
+    });
+};

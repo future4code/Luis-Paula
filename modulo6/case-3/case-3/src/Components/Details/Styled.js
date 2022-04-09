@@ -9,16 +9,36 @@ export const MainContainer = styled.div`
 `;
 
 export const H1 = styled.h1`
+  margin-bottom: 1vh;
   margin-left: 10vw;
+
+  @media only screen and (min-width: 320px) and (max-width: 1200px) {
+    margin-left: 0;
+    text-align: center;
+  }
 `;
 
 export const SecondaryContainer = styled.div`
   display: flex;
   background-color: #2d0c5e;
+
+  @media only screen and (min-width: 320px) and (max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 
 export const Img = styled.img`
   margin-left: 10vw;
+  padding: 1vh;
+  border-radius: 5%;
+
+  @media only screen and (min-width: 320px) and (max-width: 1200px) {
+    height: 75vh;
+    width: 50vw;
+    margin-left: 0;
+    align-self: center;
+    padding: 5vh 0 3vh 0;
+  }
 `;
 
 export const TerciaryContainer = styled.div`
@@ -36,6 +56,10 @@ export const Title = styled.p`
 
 export const Genres = styled.p`
   margin-top: -3vh;
+`;
+
+export const ReviewContainer = styled.div`
+  margin-bottom: 5vh;
 `;
 
 export const Review = styled.a`
