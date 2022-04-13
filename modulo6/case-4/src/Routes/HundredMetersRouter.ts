@@ -6,5 +6,5 @@ export const HundredMetersRouter = express.Router();
 const hundredMController = new HundredMetersController();
 
 HundredMetersRouter.get('/100m', hundredMController.competitorsList);
-HundredMetersRouter.get('/winner', hundredMController.competitionWinner);
-HundredMetersRouter.post('/add', hundredMController.addAthlete);
+HundredMetersRouter.get('/100mwinner', hundredMController.competitionWinner);
+HundredMetersRouter.post('/add100m', hundredMController.addAthlete);

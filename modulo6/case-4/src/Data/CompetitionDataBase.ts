@@ -73,7 +73,7 @@ export class CompetitionDataBase extends BaseDataBase {
       .from(CompetitionDataBase.TABLE_NAME_2)
       .where({
         value: this.getConnection()
-          .min('value')
+          .max('value')
           .from(CompetitionDataBase.TABLE_NAME_2),
       });
 
