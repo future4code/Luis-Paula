@@ -1,4 +1,4 @@
-import { CompetitionDataBase } from '../Data/CompetitionDataBase';
+import { HundredMetersDataBase } from '../Data/HundredMetersDataBase';
 import { CustomError } from '../Error/CustomError';
 import { HundredMetersDTO } from '../Model/TypesHundredMeters';
 import { IdGenerator } from '../Services/IdGenerator';
@@ -6,12 +6,12 @@ import { IdGenerator } from '../Services/IdGenerator';
 export class HundredMetersBusiness {
   constructor(
     private idGenerator: IdGenerator,
-    private CompetitionDB: CompetitionDataBase
+    private hundredMDB: HundredMetersDataBase
   ) {}
 
   public async competitorsList() {
     try {
-      const list = await this.CompetitionDB.list100M();
+      const list = await this.hundredMDB.list100M();
 
       if (!list) {
         throw new CustomError('Bad Request', 400);
@@ -38,7 +38,7 @@ export class HundredMetersBusiness {
 
       const id = this.idGenerator.generate();
 
-      await this.CompetitionDB.addCompetitor100M(
+      await this.hundredMDB.addCompetitor100M(
         id,
         input.competicao,
         input.atleta,
@@ -56,7 +56,7 @@ export class HundredMetersBusiness {
 
   public async competitionWinner() {
     try {
-      const winner = await this.CompetitionDB.bestTime100M();
+      const winner = await this.hundredMDB.bestTime100M();
 
       if (!winner) {
         throw new CustomError('Bad Request', 400);

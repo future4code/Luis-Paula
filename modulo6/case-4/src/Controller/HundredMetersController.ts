@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
 import { HundredMetersBusiness } from '../Business/HundredMetersBusiness';
-import { CompetitionDataBase } from '../Data/CompetitionDataBase';
+import { HundredMetersDataBase } from '../Data/HundredMetersDataBase';
 import { HundredMetersDTO } from '../Model/TypesHundredMeters';
 import { IdGenerator } from '../Services/IdGenerator';
 
 const businessDB = new HundredMetersBusiness(
   new IdGenerator(),
-  new CompetitionDataBase()
+  new HundredMetersDataBase()
 );
 export class HundredMetersController {
   public async competitorsList(req: Request, res: Response) {

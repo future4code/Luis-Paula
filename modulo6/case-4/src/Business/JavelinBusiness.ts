@@ -1,4 +1,4 @@
-import { CompetitionDataBase } from '../Data/CompetitionDataBase';
+import { JavelinDataBase } from '../Data/JavelinDataBase';
 import { CustomError } from '../Error/CustomError';
 import { JavelinDTO } from '../Model/TypesJavelin';
 import { IdGenerator } from '../Services/IdGenerator';
@@ -6,12 +6,12 @@ import { IdGenerator } from '../Services/IdGenerator';
 export class JavelinBusiness {
   constructor(
     private idGenerator: IdGenerator,
-    private CompetitionDB: CompetitionDataBase
+    private javelinDB: JavelinDataBase
   ) {}
 
   public async competitorsList() {
     try {
-      const list = await this.CompetitionDB.listJavelin();
+      const list = await this.javelinDB.listJavelin();
 
       if (!list) {
         throw new CustomError('Bad Request', 400);
@@ -38,7 +38,7 @@ export class JavelinBusiness {
 
       const id = this.idGenerator.generate();
 
-      await this.CompetitionDB.addCompetitorJavelin(
+      await this.javelinDB.addCompetitorJavelin(
         id,
         input.competicao,
         input.atleta,
@@ -56,7 +56,7 @@ export class JavelinBusiness {
 
   public async competitionWinner() {
     try {
-      const winner = await this.CompetitionDB.bestTimeJavelin();
+      const winner = await this.javelinDB.bestTimeJavelin();
 
       if (!winner) {
         throw new CustomError('Bad Request', 400);

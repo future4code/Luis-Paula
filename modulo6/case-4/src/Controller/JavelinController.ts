@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
 import { JavelinBusiness } from '../Business/JavelinBusiness';
-import { CompetitionDataBase } from '../Data/CompetitionDataBase';
+import { JavelinDataBase } from '../Data/JavelinDataBase';
 import { JavelinDTO } from '../Model/TypesJavelin';
 import { IdGenerator } from '../Services/IdGenerator';
 
 const businessDB = new JavelinBusiness(
   new IdGenerator(),
-  new CompetitionDataBase()
+  new JavelinDataBase()
 );
 export class JavelinController {
   public async competitorsList(req: Request, res: Response) {
